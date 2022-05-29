@@ -1,0 +1,10 @@
+{
+    "name": "datatableswebutility/dwuty",
+    "description": "checking composer integration",
+    "license": "MIT",
+    "require": {
+        "twbs/bootstrap": "4.*",
+        "datatables/datatables": "^1.10",
+        "components/jquery": "3.5.1"
+    }
+}
