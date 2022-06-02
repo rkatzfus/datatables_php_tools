@@ -1,10 +1,9 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 
-use AutoloadingExample\Example;
-use AutoloadingExample\Plugin\ExamplePlugin;
+use lib\mysqli;
 
-$example = new Example();
-$examplePlugin = new ExamplePlugin();
+$example = new mysqli_tools();
+
 ?>
 

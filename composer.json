@@ -1,6 +1,6 @@
 {
     "name": "datatableswebutility/dwuty",
-    "version": "0.0.2",
+    "version": "0.0.1",
     "description": "tabletools ajax",
     "homepage": "http://datatableswebutility.com/",
     "authors": [
@@ -24,7 +24,7 @@
     }, 
     "autoload": {
         "psr-4": {
-          "AutoloadingExample\\":"src/"
+          "lib\\":"src/"
         }
       }
 
