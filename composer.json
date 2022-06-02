@@ -21,5 +21,11 @@
         "twbs/bootstrap": "4.*",
         "datatables/datatables": "^1.10",
         "components/jquery": "3.5.1"
-    }
+    }, 
+    "autoload": {
+        "psr-4": {
+          "AutoloadingExample\\":"src/"
+        }
+      }
+
 }
