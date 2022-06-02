@@ -1,0 +1,31 @@
+{
+    "name": "datatableswebutility/dwuty",
+    "version": "0.0.1",
+    "description": "tabletools ajax",
+    "homepage": "http://datatableswebutility.com/",
+    "authors": [
+        {
+            "name": "Robin Richter",
+            "email": "info@dwuty.de",
+            "role": "Developer"
+        },
+        {
+            "name": "Robert Katzfuss",
+            "email": "info@dwuty.de",
+            "role": "Developer"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "php" : ">=7.4",
+        "twbs/bootstrap": "4.*",
+        "datatables/datatables": "^1.10",
+        "components/jquery": "3.5.1"
+    }, 
+    "autoload": {
+        "psr-4": {
+          "AutoloadingExample\\":"src/"
+        }
+      }
+
+}
