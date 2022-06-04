@@ -1,8 +1,8 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 
-use Autoloading\MySqli;
+use Autoloading\database_tools;
 
-$objMySqli = new MySqli();
+$objMySqli = new database_tools();
 ?>
 
