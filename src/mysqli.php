@@ -4,8 +4,12 @@ class MySqli
 {
     function __construct()
     {
-        echo "Hello world! ";
         $this->username = get_current_user();
+    }
+    function __destruct() {
+        $this->mysqli_conn->close();
+    }
+    private function get_conn(){
         $host = 'db';
         $user = 'MYSQL_USER';
         $pass = 'MYSQL_PASSWORD';
@@ -16,12 +20,10 @@ class MySqli
             die();
         } 
     }
-    function __destruct() {
-        $this->mysqli_conn -> close();
-    }
     public function sql2array( // exec_sql
         $sql = ""
     ) {
+        $this->get_conn();
         if ($this->mysqli_conn != false) {
             foreach ($this->mysqli_conn -> query($sql) -> fetch_all(MYSQLI_ASSOC) as $value) {
                 $result[] = $value;
@@ -33,6 +35,7 @@ class MySqli
         $sql = ""
         , $pk = ""
     ) {
+        $this->get_conn();
         if ($this->mysqli_conn != false) {
             foreach ($this->mysqli_conn -> query($sql) -> fetch_all(MYSQLI_ASSOC) as $value) {
                 $result[$value[$pk]] = $value;
