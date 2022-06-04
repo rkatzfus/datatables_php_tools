@@ -1,13 +1,13 @@
 <?php
 namespace Autoloading;
-class MySqli
+class database_tools
 {
     function __construct()
     {
         $this->username = get_current_user();
     }
     function __destruct() {
-        $this->mysqli_conn->close();
+        // $this->mysqli_conn->close();
     }
     private function get_conn(){
         $host = 'db';

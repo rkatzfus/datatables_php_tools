@@ -20,8 +20,7 @@
         "php" : ">=8.1",
         "twbs/bootstrap": "5.*",
         "datatables/datatables": "^1.10",
-        "components/jquery": "3.5.1",
-        "kartik-v/yii2-editors": "@dev"
+        "components/jquery": "3.5.1"
     }, 
     "autoload": {
         "psr-4": {

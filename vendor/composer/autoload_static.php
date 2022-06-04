@@ -21,7 +21,7 @@ class ComposerStaticInit3a17cdf7e3c3e7edc81326acc03e1f52
     );
 
     public static $classMap = array (
-        'Autoloading\\MySqli' => __DIR__ . '/../..' . '/src/MySqli.php',
+        'Autoloading\\database_tools' => __DIR__ . '/../..' . '/src/database_tools.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
 

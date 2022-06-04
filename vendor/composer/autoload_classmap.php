@@ -6,6 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Autoloading\\MySqli' => $baseDir . '/src/MySqli.php',
+    'Autoloading\\database_tools' => $baseDir . '/src/database_tools.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
 );
