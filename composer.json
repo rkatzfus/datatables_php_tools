@@ -24,7 +24,8 @@
     }, 
     "autoload": {
         "psr-4": {
-          "AutoloadingExample\\":"src/"
+          "AutoloadingExample\\":"src/",
+          "Autoloading\\":"src/"
         }
       }
 
