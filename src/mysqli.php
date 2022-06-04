@@ -1,6 +1,6 @@
 <?php
 namespace Autoloading;
-class mysqli_tools
+class MySqli
 {
     function __construct()
     {

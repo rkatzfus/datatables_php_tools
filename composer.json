@@ -17,14 +17,14 @@
     ],
     "license": "MIT",
     "require": {
-        "php" : ">=7.4",
-        "twbs/bootstrap": "4.*",
+        "php" : ">=8.1",
+        "twbs/bootstrap": "5.*",
         "datatables/datatables": "^1.10",
-        "components/jquery": "3.5.1"
+        "components/jquery": "3.5.1",
+        "kartik-v/yii2-editors": "@dev"
     }, 
     "autoload": {
         "psr-4": {
-          "AutoloadingExample\\":"src/",
           "Autoloading\\":"src/"
         }
       }

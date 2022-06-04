@@ -7,5 +7,4 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Autoloading\\' => array($baseDir . '/src'),
-    'AutoloadingExample\\' => array($baseDir . '/src'),
 );

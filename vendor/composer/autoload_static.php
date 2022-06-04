@@ -10,7 +10,6 @@ class ComposerStaticInit3a17cdf7e3c3e7edc81326acc03e1f52
         'A' => 
         array (
             'Autoloading\\' => 12,
-            'AutoloadingExample\\' => 19,
         ),
     );
 
@@ -19,14 +18,10 @@ class ComposerStaticInit3a17cdf7e3c3e7edc81326acc03e1f52
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
-        'AutoloadingExample\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src',
-        ),
     );
 
     public static $classMap = array (
-        'AutoloadingExample\\Example' => __DIR__ . '/../..' . '/src/Example.php',
+        'Autoloading\\MySqli' => __DIR__ . '/../..' . '/src/MySqli.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
 

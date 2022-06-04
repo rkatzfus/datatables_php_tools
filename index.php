@@ -1,7 +1,8 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 
-use AutoloadingExample\Example;
-$example = new Example();
+use Autoloading\MySqli;
+
+$objMySqli = new MySqli();
 ?>
 
