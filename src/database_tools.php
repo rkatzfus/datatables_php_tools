@@ -13,7 +13,7 @@ class database_tools
         $host = 'db';
         $user = 'MYSQL_USER';
         $pass = 'MYSQL_PASSWORD';
-        $this->mysqli_conn = new mysqli($host, $user, $pass);
+        $this->mysqli_conn = new \mysqli($host, $user, $pass);
         if ($this->mysqli_conn->connect_error) {
             echo("Connection failed: " . $this->mysqli_conn->connect_error);
             $this->mysqli_conn = false;
