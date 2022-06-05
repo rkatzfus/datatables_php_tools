@@ -4,7 +4,7 @@ class database_tools
 {
     function __construct()
     {
-        $this->username = get_current_user();
+        // $this->username = get_current_user();
     }
     function __destruct() {
         // $this->mysqli_conn->close();

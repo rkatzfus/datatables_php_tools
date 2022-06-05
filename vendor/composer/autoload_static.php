@@ -22,6 +22,8 @@ class ComposerStaticInit3a17cdf7e3c3e7edc81326acc03e1f52
 
     public static $classMap = array (
         'Autoloading\\database_tools' => __DIR__ . '/../..' . '/src/database_tools.php',
+        'Autoloading\\webutility' => __DIR__ . '/../..' . '/src/webutility.php',
+        'Autoloading\\webutility_ssp' => __DIR__ . '/../..' . '/src/webutility_ssp.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
 
