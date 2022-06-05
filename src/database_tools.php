@@ -20,6 +20,16 @@ class database_tools
             die();
         } 
     }
+    public function sql_getfield(
+        $sql = ""
+    ) {
+        $this->get_conn();
+        $result = false;
+        if($this->mysqli_conn != false && isset($sql) && $sql != ""){
+            $result = trim(mysqli_query($this->mysqli_conn, $sql)->fetch_row()[0]) ?? false;
+        }
+        return $result;
+    }
     public function sql2array( // exec_sql
         $sql = ""
     ) {

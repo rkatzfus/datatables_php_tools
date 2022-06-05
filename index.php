@@ -20,6 +20,15 @@ echo "<hr>";
 echo "<b>sql2array_pk</b>";
 var_dump($obj_mysqli->sql2array_pk($sql,"NAME"));
 echo "<hr>";
+$sql = "
+    select
+        distinct count(*) 
+    from 
+        MYSQL_DATABASE.test_table; 
+";
+echo "<b>sql_getfield</b>";
+var_dump($obj_mysqli->sql_getfield($sql));
+echo "<hr>";
 $obj_webutility = new webutility();
 $obj_webutility_ssp = new webutility_ssp();
 
