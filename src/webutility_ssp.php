@@ -1,6 +1,5 @@
 <?php
 namespace Autoloading;
-// use Autoloading\database_tools;
 class webutility_ssp
 {
     private $draw;
@@ -83,6 +82,184 @@ class webutility_ssp
             $this->recordsTotal = intval($this->obj_mysqli->sql_getfield($sql));
         }
     }
-
+    private function set_recordsFiltered()
+    {
+        if(!isset($this->recordsFiltered) && $this->recordsFiltered < 1){
+            $strWhereblock = "";
+            if (!empty($this->strSqlWhere)) {
+                $strWhereblock .= "(".$this->strSqlWhere.")";
+            }
+            if (!empty($this->strSqlSearch)) {
+                if (empty($strWhereblock)) {
+                    $strWhereblock .= "(".$this->strSqlSearch.")";
+                } else {
+                    $strWhereblock .= " and (".$this->strSqlSearch.")";
+                }  
+            }
+            if (!empty($this->strSqlSearchColumn)) {
+                if (empty($strWhereblock)) {
+                    $strWhereblock .= "(".$this->strSqlSearchColumn.")";
+                } else {
+                    $strWhereblock .= " and (".$this->strSqlSearchColumn.")";
+                }  
+            }
+            if (!empty($strWhereblock)) {
+                $strWhereblock = " WHERE ".$strWhereblock;
+            }
+            $sql = "
+                select
+                    distinct count(*) ".$this->strSqlFrom.$strWhereblock;
+            $this->recordsFiltered = intval($this->obj_mysqli->sql_getfield($sql));
+        }
+    }
+    public function set_Select(
+        $ary_Select = array()
+    ) { 
+        $this->strsqlSelectStart = "SELECT DISTINCT ";
+        $this->ary_sqlSelectInline = array();
+        if (array_search('DT_RowId', array_column($ary_Select, 'dt')) !== false) {
+            foreach ($ary_Select as $Select_value) {
+                if ($Select_value['dt'] == 'DT_RowId') {
+                    $this->strsqlSelectStart .= "concat('row_', " . $Select_value['db'] . ") as [DT_RowId]";
+                } else {
+                    $this->ary_sqlSelectInline[] = $Select_value['db']." as [".$Select_value['dt']."]";
+                }
+            }
+            $this->strsqlSelect = $this->strsqlSelectStart . ", " . implode(",", $this->ary_sqlSelectInline);
+        } elseif (!empty($ary_Select)) {
+            foreach ($ary_Select as $Select_key => $Select_value) {
+                $this->ary_sqlSelectInline[] = $Select_value . " as [" . $Select_key . "]";
+            }
+            $this->strsqlSelect =  $this->strsqlSelectStart . implode(",", $this->ary_sqlSelectInline);
+        } else { 
+           $this->debug = true;
+           echo "<hr>";
+           echo "<b>an error has occured!</b>";
+        }
+        if ($this->debug == true ) {
+            echo "<hr>";
+            echo "<b>function set_Select</b><br>";
+            echo $this->strsqlSelect;
+            var_dump($ary_Select);
+        }   
+    }
+    public function set_From(
+        $strSqlFrom
+    ) {
+        $this->strSqlFrom = " from ".$strSqlFrom;
+        if ($this->debug == true ) {
+            echo "<hr>";
+            echo "<b>function set_From</b><br>";
+            echo $this->strSqlFrom = " from ".$strSqlFrom;;
+        }   
+    }
+    public function set_Where(
+        $strSqlWhere=""
+    ) {
+        $this->strSqlWhere = $strSqlWhere;
+        if ($this->debug == true ) {
+            echo "<hr>";
+            echo "<b>function set_Where</b><br>";
+            echo $this->strSqlWhere = $strSqlWhere;
+        }   
+    }
+    public function set_Search(
+        $strSqlSearch
+    ) {
+        $this->strSqlSearch = $strSqlSearch;
+        if ($this->debug == true ) {
+            echo "<hr>";
+            echo "<b>function set_Search</b><br>";
+            echo $this->strSqlSearch = $strSqlSearch;
+        } 
+    }
+    public function set_SearchColumn(
+        $strSqlSearchColumn
+    ) {
+        $this->strSqlSearchColumn = $strSqlSearchColumn;
+        if ($this->debug == true ) {
+            echo "<hr>";
+            echo "<b>function set_SearchColumn</b><br>";
+            echo $this->strSqlSearchColumn = $strSqlSearchColumn;
+        } 
+    }
+    public function set_Columns(
+        $arycolumns
+    ) {
+        $this->arycolumns = $arycolumns;
+        foreach ($arycolumns as $column) {
+            $this->arycolumns_id[$column['dt']] = $column['db'];
+        }
+        if ($this->debug == true ) {
+            echo "<hr>";
+            echo "<b>function set_Columns</b><br>";
+            var_dump($this->arycolumns_id);
+        } 
+    }
+    public function set_data_sql() 
+    {
+        $strWhereblock = "";
+        if (!empty($this->strSqlWhere)) {
+            $strWhereblock .= "(".$this->strSqlWhere.")";
+        }
+        if (!empty($this->strSqlSearch)) {
+            if (empty($strWhereblock)) {
+                $strWhereblock .= "(".$this->strSqlSearch.")";
+            } else {
+                $strWhereblock .= " and (".$this->strSqlSearch.")";
+            }  
+        }
+        if (!empty($this->strSqlSearchColumn)) {
+            if (empty($strWhereblock)) {
+                $strWhereblock .= "(".$this->strSqlSearchColumn.")";
+            } else {
+                $strWhereblock .= " and (".$this->strSqlSearchColumn.")";
+            }  
+        }
+        if (!empty($strWhereblock)) {
+            $strWhereblock = " where ".$strWhereblock;
+        }
+        $query = $this->objMSSQL->exec_sql($this->strsqlSelect.$this->strSqlFrom.$strWhereblock.$this->strsqlOrder.$this->length_and_paging());
+        if($query != false && isset($this->arycolumns)){
+            foreach ($query as $value_query) {
+                $rowdata = array();
+                foreach ($this->arycolumns as $column) {
+                    $rowdata[$column['dt']] = $value_query[$column['dt']];
+                }
+                array_push($this->data,$rowdata);
+            }
+        }
+        $sql = $this->strsqlSelect.$this->strSqlFrom.$strWhereblock.$this->strsqlOrder.$this->length_and_paging();
+        if ($this->debug == true ) {
+            echo "<hr>";
+            echo "<b>function set_data_sql (final sql)</b><br>";
+            echo $sql;
+        } 
+        return  $sql;
+    }
+    public function set_data(
+        $data
+    ) {
+        $this->data = ($data);
+        if ($this->debug == true ) {
+            echo "<hr>";
+            echo "<b>function set_data</b><br>";
+            echo $this->data = ($data);
+        } 
+    }
+    public function fetch()
+    {
+        $result['draw'] = $this->draw;
+        $this->set_recordsTotal();
+        $result['recordsTotal'] = $this->recordsTotal;
+        $this->set_recordsFiltered();
+        $result['recordsFiltered'] = $this->recordsFiltered;
+        $result['data'] = $this->data;
+        if ($this->debug == true ) {
+            echo "<hr>";
+            echo "<b>function fetch</b><br>";
+        } 
+        echo json_encode($result);
+    }
 }
 ?>
