@@ -18,7 +18,6 @@ class webutility_ssp
         $this->strsqlOrder = "";
         $this->data = array();
         $this->obj_mysqli = new database_tools();
-        echo "hello from webutility_ssp";
     }  
     public function set_draw(
         $draw = 0
