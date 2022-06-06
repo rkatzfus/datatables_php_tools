@@ -1,5 +1,5 @@
 <?php
-namespace Autoloading;
+namespace App;
 
 $pkfield = $_POST['pkfield'];
 $obj_ssp = new webutility_ssp($debug = true);

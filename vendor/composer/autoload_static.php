@@ -9,21 +9,21 @@ class ComposerStaticInit3a17cdf7e3c3e7edc81326acc03e1f52
     public static $prefixLengthsPsr4 = array (
         'A' => 
         array (
-            'Autoloading\\' => 12,
+            'App\\' => 4,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Autoloading\\' => 
+        'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
     );
 
     public static $classMap = array (
-        'Autoloading\\database_tools' => __DIR__ . '/../..' . '/src/database_tools.php',
-        'Autoloading\\webutility' => __DIR__ . '/../..' . '/src/webutility.php',
-        'Autoloading\\webutility_ssp' => __DIR__ . '/../..' . '/src/webutility_ssp.php',
+        'App\\database_tools' => __DIR__ . '/../..' . '/src/database_tools.php',
+        'App\\webutility' => __DIR__ . '/../..' . '/src/webutility.php',
+        'App\\webutility_ssp' => __DIR__ . '/../..' . '/src/webutility_ssp.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
 

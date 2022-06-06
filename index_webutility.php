@@ -1,7 +1,7 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 
-use Autoloading\webutility;
+use App\webutility;
 ?>
     <div class="container-fluid">
         <?php

@@ -1,5 +1,5 @@
 <?php
-namespace Autoloading;
+namespace App;
 class database_tools
 {
     function __construct()

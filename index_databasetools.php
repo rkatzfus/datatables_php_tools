@@ -1,9 +1,9 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 
-use Autoloading\database_tools;
-// use Autoloading\webutility;
-// use Autoloading\webutility_ssp;
+use App\database_tools;
+// use App\webutility;
+// use App\webutility_ssp;
 
 $obj_mysqli = new database_tools();
 $sql = "

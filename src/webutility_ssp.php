@@ -1,5 +1,5 @@
 <?php
-namespace Autoloading;
+namespace App;
 class webutility_ssp
 {
     private $draw;

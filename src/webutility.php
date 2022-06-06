@@ -1,5 +1,5 @@
 <?php
-namespace Autoloading;
+namespace App;
 define('UNSELECT', '0');
 define('VIEW', '1');
 define('EDIT', '2');
