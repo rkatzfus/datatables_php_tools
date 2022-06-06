@@ -105,9 +105,7 @@ class webutility
         <script type="text/javascript" src="/vendor/components/jquery/jquery.min.js"></script>
         <script type="text/javascript" src="/vendor/datatables/datatables/media/js/jquery.dataTables.min.js"></script>
         <script type="text/javascript">
-            alert("los gehts");
             $(document).ready(function() {
-                
                 function fetch_data_<?= $this->tbl_ID; ?>() {
                     var table = $("#<?= $this->tbl_ID; ?>").DataTable({
                         stateSave: true,

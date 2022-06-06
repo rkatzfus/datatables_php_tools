@@ -11,7 +11,7 @@ use App\webutility_ssp;
             $pkfield_xxxTESTxxx = "test.ID";
             $array_AJAX_xxxTESTxxx = array();
             $array_AJAX_xxxTESTxxx["fetch"] = array(
-                "url" => "/vendor/datatableswebutility/dwuty/src/crud/read.php"
+                "url" => "/vendor/datatableswebutility/dwuty/read.php"
                 , "datasource" => "MYSQL_DATABASE.test_table test"
             );
             $obj_webutility = new webutility("dte_xxxTESTxxx", $array_AJAX_xxxTESTxxx, $pkfield_xxxTESTxxx);

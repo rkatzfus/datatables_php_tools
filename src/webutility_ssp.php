@@ -3,6 +3,8 @@ namespace App;
 class webutility_ssp
 {
     private $draw;
+    private $recordsTotal;
+    private $recordsFiltered;
     private $intlength;
     private $intstart;
     private $strsqlOrder;
@@ -54,7 +56,7 @@ class webutility_ssp
         if($this->intlength==-1){
             return "";
         }else{
-            return " offset ".$this->intstart." rows fetch next ".$this->intlength." rows only";
+            return " limit ".$this->intstart.", ".$this->intlength;
         }
     }
     public function set_order(
@@ -63,13 +65,13 @@ class webutility_ssp
     ) {
         $sql_order = array();
         foreach ($orders as $ordersValue) {
-            array_push($sql_order, '['.$columns[$ordersValue['column']]['data'].'] '.$ordersValue['dir']);
+            array_push($sql_order, $columns[$ordersValue['column']]['data'].' '.$ordersValue['dir']);
         }
         $this->strsqlOrder = " order by ".implode(", ", $sql_order);
         if ($this->debug == true ) {
             echo "<hr>";
             echo "<b>function set_order</b><br>";
-            echo $this->strsqlOrder = " order by BY ".implode(", ", $sql_order);
+            echo $this->strsqlOrder = " order by ".implode(", ", $sql_order);
         } 
     }
     private function set_recordsTotal()
@@ -119,9 +121,9 @@ class webutility_ssp
         if (array_search('DT_RowId', array_column($ary_Select, 'dt')) !== false) {
             foreach ($ary_Select as $Select_value) {
                 if ($Select_value['dt'] == 'DT_RowId') {
-                    $this->strsqlSelectStart .= "concat('row_', " . $Select_value['db'] . ") as [DT_RowId]";
+                    $this->strsqlSelectStart .= "concat('row_', " . $Select_value['db'] . ") as DT_RowId";
                 } else {
-                    $this->ary_sqlSelectInline[] = $Select_value['db']." as [".$Select_value['dt']."]";
+                    $this->ary_sqlSelectInline[] = $Select_value['db']." as ".$Select_value['dt'];
                 }
             }
             $this->strsqlSelect = $this->strsqlSelectStart . ", " . implode(",", $this->ary_sqlSelectInline);
@@ -218,9 +220,9 @@ class webutility_ssp
         if (!empty($strWhereblock)) {
             $strWhereblock = " where ".$strWhereblock;
         }
-        $query = $this->objMSSQL->exec_sql($this->strsqlSelect.$this->strSqlFrom.$strWhereblock.$this->strsqlOrder.$this->length_and_paging());
-        if($query != false && isset($this->arycolumns)){
-            foreach ($query as $value_query) {
+        $result = $this->obj_mysqli->sql2array($this->strsqlSelect.$this->strSqlFrom.$strWhereblock.$this->strsqlOrder.$this->length_and_paging());
+        if($result != false && isset($this->arycolumns)){
+            foreach ($result as $value_query) {
                 $rowdata = array();
                 foreach ($this->arycolumns as $column) {
                     $rowdata[$column['dt']] = $value_query[$column['dt']];
