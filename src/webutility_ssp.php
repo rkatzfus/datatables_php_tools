@@ -1,5 +1,6 @@
 <?php
 namespace Autoloading;
+use Autoloading\database_tools;
 class webutility_ssp
 {
     private $draw;
@@ -17,6 +18,7 @@ class webutility_ssp
         $this->intstart = 0;
         $this->strsqlOrder = "";
         $this->data = array();
+        $this->obj_mysqli = new database_tools();
         echo "hello from webutility_ssp"; 
     }  
     public function set_draw(
@@ -75,8 +77,21 @@ class webutility_ssp
     private function set_recordsTotal()
     {
         if(!isset($this->recordsTotal) && $this->recordsTotal < 1){
-            $query = $this->objMSSQL->exec_sql("SELECT DISTINCT COUNT(*) as 'all' ".$this->strSqlFrom);
-            $this->recordsTotal = intval($query[0]['all']);
+
+            $sql = "
+                select
+                    distinct count(*) 
+                from 
+                    MYSQL_DATABASE.test_table; 
+            ";
+            echo $this->obj_mysqli->sql_getfield($sql);
+
+
+
+
+
+            // $query = $this->objMSSQL->exec_sql("SELECT DISTINCT COUNT(*) as 'all' ".$this->strSqlFrom);
+            // $this->recordsTotal = intval($query[0]['all']);
         }
     }
 
