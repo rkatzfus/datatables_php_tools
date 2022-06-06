@@ -30,6 +30,7 @@ echo "<b>sql_getfield</b>";
 var_dump($obj_mysqli->sql_getfield($sql));
 echo "<hr>";
 $obj_webutility = new webutility();
+echo "<hr>";
 $obj_webutility_ssp = new webutility_ssp();
 
 ?>
