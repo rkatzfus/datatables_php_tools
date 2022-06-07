@@ -1,6 +1,5 @@
 <?php
-require __DIR__ . '/vendor/autoload.php';
-use App\webutility_ssp;
+namespace App;
 
 $pkfield = $_POST['pkfield'];
 $obj_ssp = new webutility_ssp($debug = false);
