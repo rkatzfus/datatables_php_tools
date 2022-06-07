@@ -10,7 +10,8 @@ $sql = "
     select
         ID
         , DEL
-        , NAME
+        , TEXT_FIELD
+        , CHECKBOX
     from
         MYSQL_DATABASE.root_table;
 ";

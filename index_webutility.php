@@ -22,7 +22,12 @@ use App\webutility;
             $obj_webutility = new webutility("dte_xxxTESTxxx", $array_AJAX_xxxTESTxxx, $pkfield_xxxTESTxxx);
             $strsqlWhere_xxxTESTxxx = "root.DEL <> 1";
             $obj_webutility->set_where($strsqlWhere_xxxTESTxxx);
-            $obj_webutility->new_column("root.NAME", "NAME", "Anzeigename", VIEW, TEXT_FIELD);
+			$arySetting_CHECKBOX = array(
+				"ORDERABLE" => false
+				, "SEARCHABLE" => false
+			);
+            $obj_webutility->new_column("root.TEXT_FIELD", "TEXT_FIELD", "column: TEXT_FIELD", VIEW, TEXT_FIELD);
+            $obj_webutility->new_column("root.CHECKBOX", "CHECKBOX", "column: CHECKBOX", VIEW, CHECKBOX, $arySetting_CHECKBOX);
             $defOrderby_xxxTESTxxx = 0;
             $obj_webutility->table_header();
         ?>

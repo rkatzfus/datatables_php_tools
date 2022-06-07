@@ -1,10 +1,11 @@
 <?php
 namespace App;
-define('UNSELECT', '0');
-define('VIEW', '1');
-define('EDIT', '2');
+define("UNSELECT", "0");
+define("VIEW", "1");
+define("EDIT", "2");
 //------------------
 define('TEXT_FIELD', '0');
+define('CHECKBOX', '1');
 class webutility
 {
     private $columns = array();
@@ -116,26 +117,30 @@ class webutility
                         serverSide: true,
                         columnDefs: [
                             <?php
-                                $column_edit_i = 0;
-                                $column_edit_array = array();
-                                foreach ($this->columns as $column) {
-                                    if ($column['ACTION'] == 2) {
-                                        $column_edit_array += array($column_edit_i => $column_edit_i);
+                                $aryColumndef= array();
+                                foreach ($this->columns as $columns_key => $columns_value) {
+                                    switch ($columns_value["TYP"]) {
+                                        case 1: // CHECKBOX
+                                            $classname = "text-center";
+                                            break;
+                                        
+                                        default:
+                                            // code
+                                            break;
                                     }
-                                    $column_edit_i++;
+                                    $aryColumndef[]=array(
+                                        "targets: ".$columns_key
+                                        , ($columns_value["ORDERABLE"] == 1)?"orderable: true":"orderable: false"
+                                        , ($columns_value["SEARCHABLE"] == 1)?"searchable: true":"searchable: false"
+                                        , (isset($classname))?"className: '".$classname."'":""
+                                    ); 
                                 }
-                                if (trim(implode(", ", $column_edit_array)) != "") {
-                                    if (isset($this->ajax_update_url)) {
-                                        ?> {
-                                                targets: [<?= trim(implode(", ", $column_edit_array)); ?>],
-                                                createdCell: function(td, cellData, rowData, row, col) {
-                                                    $(td).attr("contenteditable", true);
-                                                }
-                                            }
-                                        <?php
-                                    }
+                                foreach ($aryColumndef as $row) {
+                                    echo "{".implode(", ", $row)."},";
                                 }
-                            ?>
+                                                            ?>
+                            // { targets: 1, orderable: true, className: 'text-center'},
+                            // { targets: 0, orderable: true, className: 'text-center'},
                         ],
                         ajax: {
                             url: "<?= $this->ajax_fetch_url; ?>",
@@ -156,13 +161,24 @@ class webutility
                         columns: [
                             <?php
                                 foreach ($this->columns as $column) {
-                                    $aryclassName = array();
                                     echo "{";
                                     echo "name: \"" . $column["SQLNAME"] . "\", ";
                                     echo "data: \"" . $column["NAME"] . "\", ";
                                     echo "celltype: \"" . $column["TYP"] . "\", ";
-                                    ($column["ACTION"] == 2)? $aryclassName[] = "update_" . $this->tbl_ID:"";
-                                    echo "className: \"" . implode(" ", $aryclassName) . " align-middle\", ";
+                                    switch ($column['TYP']) {
+                                        case 1: // CHECKBOX
+                                            ?> render: function(data, type, row, meta) {
+                                                    is_checked = (data == true) ? 'checked' : '';
+                                                    return '<div class="form-switch"><input class="form-check-input" type="checkbox" ' + is_checked + '></div>';
+                                                },
+                                            <?php
+                                            # code...
+                                            break;
+                                        
+                                        default:
+                                            # code...
+                                            break;
+                                    }
                                     isset($column["DT_CONFIG"])?$column["DT_CONFIG"]:"";
                                     echo "},";
                                 }
@@ -195,6 +211,8 @@ class webutility
         if ($Typ == 2 || $Typ == 8) {
             $Action = 0;
         }
+        $orderable=isset($arySetting["ORDERABLE"])?$arySetting["ORDERABLE"]:true;
+        $searchable=isset($arySetting["SEARCHABLE"])?$arySetting["SEARCHABLE"]:true;
         $dtconfig=isset($arySetting["DT_CONFIG"])?$arySetting["DT_CONFIG"]:"";
         $required=isset($arySetting["REQUIRED"])?$arySetting["REQUIRED"]:"";
         $default=isset($arySetting["DEFAULT"])?$arySetting["DEFAULT"]:"";
@@ -204,6 +222,8 @@ class webutility
             , "DISPLAYNAME" => $Displayname
             , "ACTION" => $Action
             , "TYP" => $Typ
+            , "ORDERABLE" => $orderable
+            , "SEARCHABLE" => $searchable
             , "DT_CONFIG" => $dtconfig
             , "REQUIRED" => $required
             , "DEFAULT" => $default
