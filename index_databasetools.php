@@ -12,7 +12,7 @@ $sql = "
         , DEL
         , NAME
     from
-        MYSQL_DATABASE.test_table;
+        MYSQL_DATABASE.root_table;
 ";
 echo "<b>sql2array</b>";
 var_dump($obj_mysqli->sql2array($sql));
@@ -24,7 +24,7 @@ $sql = "
     select
         distinct count(*) 
     from 
-        MYSQL_DATABASE.test_table; 
+        MYSQL_DATABASE.root_table; 
 ";
 echo "<b>sql_getfield</b>";
 var_dump($obj_mysqli->sql_getfield($sql));
