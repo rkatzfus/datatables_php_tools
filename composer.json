@@ -20,8 +20,19 @@
         "php" : ">=8.1",
         "ext-mysqli": "*",
         "twbs/bootstrap": "5.*",
-        "datatables/datatables": "^1.10",
-        "components/jquery": "3.5.1"
+        "datatables.net/datatables.net": "dev-master",
+        "components/jquery": "^3.6",
+        "datatables.net/datatables.net-bs5": "dev-master",
+        "datatables.net/datatables.net-autofill": "dev-master",
+        "datatables.net/datatables.net-autofill-bs5": "dev-master",
+        "datatables.net/datatables.net-rowreorder": "dev-master",
+        "datatables.net/datatables.net-rowreorder-bs5": "dev-master",
+        "datatables.net/datatables.net-fixedheader": "dev-master",
+        "datatables.net/datatables.net-fixedheader-bs5": "dev-master",
+        "datatables.net/datatables.net-keytable": "dev-master",
+        "datatables.net/datatables.net-keytable-bs5": "dev-master",
+        "datatables.net/datatables.net-searchpanes": "dev-master",
+        "datatables.net/datatables.net-searchpanes-bs5": "dev-master"
     }, 
     "autoload": {
         "psr-4": {

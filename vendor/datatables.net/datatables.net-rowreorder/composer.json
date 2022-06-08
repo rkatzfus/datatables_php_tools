@@ -1,0 +1,31 @@
+{
+    "version": "1.2.8",
+    "name": "datatables.net/datatables.net-rowreorder",
+    "description": "RowReorder adds end user reordering of rows in a DataTable through click-and-drag mouse and touch operations. RowReorder provides full support for Editor allowing end users to update sequential information in a fast and easy manner. This is RowReorder for DataTables",
+    "support": {
+        "forum": "https://datatables.net/forums",
+        "source": "https://github.com/DataTables/Dist-DataTables-RowReorder"
+    },
+    "homepage": "http://www.datatables.net/",
+    "authors": [
+        {
+            "name": "SpryMedia",
+            "homepage": "https://datatables.net"
+        }
+    ],
+    "license": [
+        "MIT"
+    ],
+    "prefer-stable": true,
+    "minimum-stability": "dev",
+    "keywords": [
+        "RowReorder",
+ "Row Reordering",
+        "Datatables",
+        "jQuery",
+        "table"
+    ],
+    "require": {
+        "datatables.net/datatables.net": ">=1.11.5"
+    }
+}

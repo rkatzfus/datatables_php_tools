@@ -1,0 +1,16 @@
+{
+    "js": [
+        "js/keyTable.bootstrap5.js",
+        "js/keyTable.bootstrap5.min.js"
+    ],
+    "css": [
+        "css/keyTable.bootstrap5.css",
+        "css/keyTable.bootstrap5.min.css"
+    ],
+    "types": [
+        "types/keyTable.bootstrap5.d.ts"
+    ],
+    "src-repo": "http://github.com/DataTables/KeyTable",
+    "last-tag": "2.6.4",
+    "last-sync": "c9cb500f1b24ffb37dde5c469f11176960f69ba5"
+}
