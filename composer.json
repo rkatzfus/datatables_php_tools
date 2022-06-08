@@ -22,7 +22,6 @@
         "php" : ">=8.1",
         "ext-mysqli": "*",
         "twbs/bootstrap": "5.*",
-        "datatables.net/datatables.net": "dev-master",
         "components/jquery": "^3.6",
         "datatables.net/datatables.net-bs5": "dev-master",
         "datatables.net/datatables.net-autofill": "dev-master",
@@ -34,7 +33,8 @@
         "datatables.net/datatables.net-keytable": "dev-master",
         "datatables.net/datatables.net-keytable-bs5": "dev-master",
         "datatables.net/datatables.net-searchpanes": "dev-master",
-        "datatables.net/datatables.net-searchpanes-bs5": "dev-master"
+        "datatables.net/datatables.net-searchpanes-bs5": "dev-master",
+        "datatables/datatables": "^1.10"
     }, 
     "autoload": {
         "psr-4": {
