@@ -6,6 +6,7 @@ define("EDIT", "2");
 //------------------
 define('TEXT_FIELD', '0');
 define('CHECKBOX', '1');
+define('DROPDOWN_FIELD', '2');
 class webutility
 {
     private $columns = array();
@@ -284,19 +285,16 @@ class webutility
                         processing: true,
                         cache: false,
                         searchDelay: 1000, // default null = 400ms
-                        // language: {
-                        //     url: "/localisation/dataTables.german.json"
-                        // },
                         serverSide: true,
                         columnDefs: [
                             <?php
                                 $aryColumndef= array();
                                 foreach ($this->columns as $columns_key => $columns_value) {
+                                    ($columns_value['ACTION'] == 2 && isset($this->ajax_update_url))?$classname[] = "contenteditable":"";
                                     switch ($columns_value["TYP"]) {
                                         case 1: // CHECKBOX
-                                            $classname = "text-center";
+                                            $classname[] = "text-center";
                                             break;
-                                        
                                         default:
                                             // code
                                             break;
@@ -305,15 +303,13 @@ class webutility
                                         "targets: ".$columns_key
                                         , ($columns_value["ORDERABLE"] == 1)?"orderable: true":"orderable: false"
                                         , ($columns_value["SEARCHABLE"] == 1)?"searchable: true":"searchable: false"
-                                        , (isset($classname))?"className: '".$classname."'":""
+                                        , (isset($classname))?"className: '".implode(" ",$classname)."'":""
                                     ); 
                                 }
                                 foreach ($aryColumndef as $row) {
                                     echo "{".implode(", ", $row)."},";
                                 }
-                                                            ?>
-                            // { targets: 1, orderable: true, className: 'text-center'},
-                            // { targets: 0, orderable: true, className: 'text-center'},
+                            ?>
                         ],
                         ajax: {
                             url: "<?= $this->ajax_fetch_url; ?>",
