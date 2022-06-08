@@ -1,0 +1,16 @@
+{
+    "js": [
+        "js/searchPanes.bootstrap5.js",
+        "js/searchPanes.bootstrap5.min.js"
+    ],
+    "css": [
+        "css/searchPanes.bootstrap5.css",
+        "css/searchPanes.bootstrap5.min.css"
+    ],
+    "types": [
+        "types/searchPanes.bootstrap5.d.ts"
+    ],
+    "src-repo": "http://github.com/DataTables/SearchPanes",
+    "last-tag": "2.0.0",
+    "last-sync": "280e1ee3a2307f81ee91dd9f5165f5673d4f53f9"
+}

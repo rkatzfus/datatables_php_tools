@@ -1,0 +1,716 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "89eebaa5e217352a9d41f038904d3ba0",
+    "packages": [
+        {
+            "name": "components/jquery",
+            "version": "3.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/components/jquery.git",
+                "reference": "6cf38ee1fd04b6adf8e7dda161283aa35be818c3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/components/jquery/zipball/6cf38ee1fd04b6adf8e7dda161283aa35be818c3",
+                "reference": "6cf38ee1fd04b6adf8e7dda161283aa35be818c3",
+                "shasum": ""
+            },
+            "type": "component",
+            "extra": {
+                "component": {
+                    "scripts": [
+                        "jquery.js"
+                    ],
+                    "files": [
+                        "jquery.min.js",
+                        "jquery.min.map",
+                        "jquery.slim.js",
+                        "jquery.slim.min.js",
+                        "jquery.slim.min.map"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "JS Foundation and other contributors"
+                }
+            ],
+            "description": "jQuery JavaScript Library",
+            "homepage": "http://jquery.com",
+            "support": {
+                "forum": "http://forum.jquery.com",
+                "irc": "irc://irc.freenode.org/jquery",
+                "issues": "https://github.com/jquery/jquery/issues",
+                "source": "https://github.com/jquery/jquery",
+                "wiki": "http://docs.jquery.com/"
+            },
+            "time": "2021-03-20T19:13:42+00:00"
+        },
+        {
+            "name": "datatables.net/datatables.net",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DataTables/Dist-DataTables.git",
+                "reference": "85c049199a0832d750c188477b3ad9adca688fa5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DataTables/Dist-DataTables/zipball/85c049199a0832d750c188477b3ad9adca688fa5",
+                "reference": "85c049199a0832d750c188477b3ad9adca688fa5",
+                "shasum": ""
+            },
+            "require": {
+                "components/jquery": ">=1.7"
+            },
+            "default-branch": true,
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "SpryMedia",
+                    "homepage": "https://datatables.net"
+                }
+            ],
+            "description": "DataTables is a plug-in for the jQuery Javascript library. It is a highly flexible tool, based upon the foundations of progressive enhancement, which will add advanced interaction controls to any HTML table. This is jQuery DataTables",
+            "homepage": "http://www.datatables.net/",
+            "keywords": [
+                "datatables",
+                "jquery",
+                "table"
+            ],
+            "support": {
+                "forum": "https://datatables.net/forums",
+                "source": "https://github.com/DataTables/Dist-DataTables"
+            },
+            "time": "2022-06-07T15:26:38+00:00"
+        },
+        {
+            "name": "datatables.net/datatables.net-autofill",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DataTables/Dist-DataTables-AutoFill.git",
+                "reference": "7b1cbfffa78b6793483d07ee2d5f38897fa5fcec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DataTables/Dist-DataTables-AutoFill/zipball/7b1cbfffa78b6793483d07ee2d5f38897fa5fcec",
+                "reference": "7b1cbfffa78b6793483d07ee2d5f38897fa5fcec",
+                "shasum": ""
+            },
+            "require": {
+                "datatables.net/datatables.net": ">=1.11.5"
+            },
+            "default-branch": true,
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "SpryMedia",
+                    "homepage": "https://datatables.net"
+                }
+            ],
+            "description": "AutoFill adds an Excel like data fill option to DataTables, allowing click and drag over cells, filling in information and incrementing numbers as needed. This is AutoFill for DataTables",
+            "homepage": "http://www.datatables.net/",
+            "keywords": [
+                "autofill",
+                "datatables",
+                "excel",
+                "jquery",
+                "table"
+            ],
+            "support": {
+                "forum": "https://datatables.net/forums",
+                "source": "https://github.com/DataTables/Dist-DataTables-AutoFill"
+            },
+            "time": "2022-03-31T10:59:38+00:00"
+        },
+        {
+            "name": "datatables.net/datatables.net-autofill-bs5",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DataTables/Dist-DataTables-AutoFill-Bootstrap5.git",
+                "reference": "a2544e532bd0c14cebffbd6a6a10c6c420b10750"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DataTables/Dist-DataTables-AutoFill-Bootstrap5/zipball/a2544e532bd0c14cebffbd6a6a10c6c420b10750",
+                "reference": "a2544e532bd0c14cebffbd6a6a10c6c420b10750",
+                "shasum": ""
+            },
+            "require": {
+                "datatables.net/datatables.net-autofill": ">=2.3.7",
+                "datatables.net/datatables.net-bs5": ">=1.11.5"
+            },
+            "default-branch": true,
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "SpryMedia",
+                    "homepage": "https://datatables.net"
+                }
+            ],
+            "description": "AutoFill adds an Excel like data fill option to DataTables, allowing click and drag over cells, filling in information and incrementing numbers as needed. This is AutoFill for DataTables with styling for [Bootstrap5](https://getbootstrap.com/)",
+            "homepage": "http://www.datatables.net/",
+            "keywords": [
+                "autofill",
+                "bootstrap",
+                "bootstrap5",
+                "datatables",
+                "excel",
+                "jquery",
+                "table"
+            ],
+            "support": {
+                "forum": "https://datatables.net/forums",
+                "issues": "https://github.com/DataTables/Dist-DataTables-AutoFill-Bootstrap5/issues",
+                "source": "https://github.com/DataTables/Dist-DataTables-AutoFill-Bootstrap5"
+            },
+            "time": "2022-03-31T10:59:44+00:00"
+        },
+        {
+            "name": "datatables.net/datatables.net-bs5",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DataTables/Dist-DataTables-Bootstrap5.git",
+                "reference": "72fb44004a0b7c32e369c7f77eca19fe30c337d9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DataTables/Dist-DataTables-Bootstrap5/zipball/72fb44004a0b7c32e369c7f77eca19fe30c337d9",
+                "reference": "72fb44004a0b7c32e369c7f77eca19fe30c337d9",
+                "shasum": ""
+            },
+            "require": {
+                "datatables.net/datatables.net": ">=1.11.5",
+                "twbs/bootstrap": "5.*"
+            },
+            "default-branch": true,
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "SpryMedia",
+                    "homepage": "https://datatables.net"
+                }
+            ],
+            "description": "DataTables is a plug-in for the jQuery Javascript library. It is a highly flexible tool, based upon the foundations of progressive enhancement, which will add advanced interaction controls to any HTML table. This is DataTables with styling for [Bootstrap5](https://getbootstrap.com/)",
+            "homepage": "http://www.datatables.net/",
+            "keywords": [
+                "bootstrap",
+                "bootstrap5",
+                "datatables",
+                "jquery",
+                "table"
+            ],
+            "support": {
+                "forum": "https://datatables.net/forums",
+                "issues": "https://github.com/DataTables/Dist-DataTables-Bootstrap5/issues",
+                "source": "https://github.com/DataTables/Dist-DataTables-Bootstrap5"
+            },
+            "time": "2022-03-31T11:00:00+00:00"
+        },
+        {
+            "name": "datatables.net/datatables.net-fixedheader",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DataTables/Dist-DataTables-FixedHeader.git",
+                "reference": "c8831c9e69e7d4843cab13b9fde421738f4591d4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DataTables/Dist-DataTables-FixedHeader/zipball/c8831c9e69e7d4843cab13b9fde421738f4591d4",
+                "reference": "c8831c9e69e7d4843cab13b9fde421738f4591d4",
+                "shasum": ""
+            },
+            "require": {
+                "datatables.net/datatables.net": ">=1.11.5"
+            },
+            "default-branch": true,
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "SpryMedia",
+                    "homepage": "https://datatables.net"
+                }
+            ],
+            "description": "When displaying large amounts of data in a table, it can often be useful for the end user to have the column titles always visible. This is particularly true if using DataTables with pagination disabled, or the display length is set to a high value. The FixedHeader extension provides this ability. This is FixedHeader for DataTables",
+            "homepage": "http://www.datatables.net/",
+            "keywords": [
+                "Fixed Headers",
+                "datatables",
+                "fixedHeader",
+                "jquery",
+                "sticky",
+                "table"
+            ],
+            "support": {
+                "forum": "https://datatables.net/forums",
+                "source": "https://github.com/DataTables/Dist-DataTables-FixedHeader"
+            },
+            "time": "2022-03-31T11:00:58+00:00"
+        },
+        {
+            "name": "datatables.net/datatables.net-fixedheader-bs5",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DataTables/Dist-DataTables-FixedHeader-Bootstrap5.git",
+                "reference": "10940531626085f2ba17a73f140c03259a8cb340"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DataTables/Dist-DataTables-FixedHeader-Bootstrap5/zipball/10940531626085f2ba17a73f140c03259a8cb340",
+                "reference": "10940531626085f2ba17a73f140c03259a8cb340",
+                "shasum": ""
+            },
+            "require": {
+                "datatables.net/datatables.net-bs5": ">=1.11.5",
+                "datatables.net/datatables.net-fixedheader": ">=3.2.2"
+            },
+            "default-branch": true,
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "SpryMedia",
+                    "homepage": "https://datatables.net"
+                }
+            ],
+            "description": "When displaying large amounts of data in a table, it can often be useful for the end user to have the column titles always visible. This is particularly true if using DataTables with pagination disabled, or the display length is set to a high value. The FixedHeader extension provides this ability. This is FixedHeader for DataTables with styling for [Bootstrap5](https://getbootstrap.com/)",
+            "homepage": "http://www.datatables.net/",
+            "keywords": [
+                "Fixed Headers",
+                "bootstrap",
+                "bootstrap5",
+                "datatables",
+                "fixedHeader",
+                "jquery",
+                "sticky",
+                "table"
+            ],
+            "support": {
+                "forum": "https://datatables.net/forums",
+                "issues": "https://github.com/DataTables/Dist-DataTables-FixedHeader-Bootstrap5/issues",
+                "source": "https://github.com/DataTables/Dist-DataTables-FixedHeader-Bootstrap5"
+            },
+            "time": "2022-03-31T11:01:04+00:00"
+        },
+        {
+            "name": "datatables.net/datatables.net-keytable",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DataTables/Dist-DataTables-KeyTable.git",
+                "reference": "dbfe80e4843cc827534aa35f164975917d61b07f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DataTables/Dist-DataTables-KeyTable/zipball/dbfe80e4843cc827534aa35f164975917d61b07f",
+                "reference": "dbfe80e4843cc827534aa35f164975917d61b07f",
+                "shasum": ""
+            },
+            "require": {
+                "datatables.net/datatables.net": ">=1.11.5"
+            },
+            "default-branch": true,
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "SpryMedia",
+                    "homepage": "https://datatables.net"
+                }
+            ],
+            "description": "KeyTable allows you to use keyboard navigation on a DataTables enhanced table, like an Excel spreadsheet - a cell shows a focus outline which can be moved using the keyboard or mouse operations. This can be particularly useful in an editable table that uses Editor allowing end users to update data very quickly. This is KeyTable for DataTables",
+            "homepage": "http://www.datatables.net/",
+            "keywords": [
+                "datatables",
+                "excel",
+                "jquery",
+                "keyboard",
+                "keytable",
+                "spreadsheet",
+                "table"
+            ],
+            "support": {
+                "forum": "https://datatables.net/forums",
+                "source": "https://github.com/DataTables/Dist-DataTables-KeyTable"
+            },
+            "time": "2022-03-31T11:01:20+00:00"
+        },
+        {
+            "name": "datatables.net/datatables.net-keytable-bs5",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DataTables/Dist-DataTables-KeyTable-Bootstrap5.git",
+                "reference": "550ac2ceb3d5cc893a50100c0a3f752a4d487bd8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DataTables/Dist-DataTables-KeyTable-Bootstrap5/zipball/550ac2ceb3d5cc893a50100c0a3f752a4d487bd8",
+                "reference": "550ac2ceb3d5cc893a50100c0a3f752a4d487bd8",
+                "shasum": ""
+            },
+            "require": {
+                "datatables.net/datatables.net-bs5": ">=1.11.5",
+                "datatables.net/datatables.net-keytable": ">=2.6.4"
+            },
+            "default-branch": true,
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "SpryMedia",
+                    "homepage": "https://datatables.net"
+                }
+            ],
+            "description": "KeyTable allows you to use keyboard navigation on a DataTables enhanced table, like an Excel spreadsheet - a cell shows a focus outline which can be moved using the keyboard or mouse operations. This can be particularly useful in an editable table that uses Editor allowing end users to update data very quickly. This is KeyTable for DataTables with styling for [Bootstrap5](https://getbootstrap.com/)",
+            "homepage": "http://www.datatables.net/",
+            "keywords": [
+                "bootstrap",
+                "bootstrap5",
+                "datatables",
+                "excel",
+                "jquery",
+                "keyboard",
+                "keytable",
+                "spreadsheet",
+                "table"
+            ],
+            "support": {
+                "forum": "https://datatables.net/forums",
+                "issues": "https://github.com/DataTables/Dist-DataTables-KeyTable-Bootstrap5/issues",
+                "source": "https://github.com/DataTables/Dist-DataTables-KeyTable-Bootstrap5"
+            },
+            "time": "2022-03-31T11:01:26+00:00"
+        },
+        {
+            "name": "datatables.net/datatables.net-rowreorder",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DataTables/Dist-DataTables-RowReorder.git",
+                "reference": "50552a39f1482f1d1c5053eab92b549866ff01b3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DataTables/Dist-DataTables-RowReorder/zipball/50552a39f1482f1d1c5053eab92b549866ff01b3",
+                "reference": "50552a39f1482f1d1c5053eab92b549866ff01b3",
+                "shasum": ""
+            },
+            "require": {
+                "datatables.net/datatables.net": ">=1.11.5"
+            },
+            "default-branch": true,
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "SpryMedia",
+                    "homepage": "https://datatables.net"
+                }
+            ],
+            "description": "RowReorder adds end user reordering of rows in a DataTable through click-and-drag mouse and touch operations. RowReorder provides full support for Editor allowing end users to update sequential information in a fast and easy manner. This is RowReorder for DataTables",
+            "homepage": "http://www.datatables.net/",
+            "keywords": [
+                "Row Reordering",
+                "datatables",
+                "jquery",
+                "rowreorder",
+                "table"
+            ],
+            "support": {
+                "forum": "https://datatables.net/forums",
+                "source": "https://github.com/DataTables/Dist-DataTables-RowReorder"
+            },
+            "time": "2022-03-31T11:02:11+00:00"
+        },
+        {
+            "name": "datatables.net/datatables.net-rowreorder-bs5",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DataTables/Dist-DataTables-RowReorder-Bootstrap5.git",
+                "reference": "b92117bbe8dafb70039e15dd5c31296fa8adfa90"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DataTables/Dist-DataTables-RowReorder-Bootstrap5/zipball/b92117bbe8dafb70039e15dd5c31296fa8adfa90",
+                "reference": "b92117bbe8dafb70039e15dd5c31296fa8adfa90",
+                "shasum": ""
+            },
+            "require": {
+                "datatables.net/datatables.net-bs5": ">=1.11.5",
+                "datatables.net/datatables.net-rowreorder": ">=1.2.8"
+            },
+            "default-branch": true,
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "SpryMedia",
+                    "homepage": "https://datatables.net"
+                }
+            ],
+            "description": "RowReorder adds end user reordering of rows in a DataTable through click-and-drag mouse and touch operations. RowReorder provides full support for Editor allowing end users to update sequential information in a fast and easy manner. This is RowReorder for DataTables with styling for [Bootstrap5](https://getbootstrap.com/)",
+            "homepage": "http://www.datatables.net/",
+            "keywords": [
+                "Row Reordering",
+                "bootstrap",
+                "bootstrap5",
+                "datatables",
+                "jquery",
+                "rowreorder",
+                "table"
+            ],
+            "support": {
+                "forum": "https://datatables.net/forums",
+                "issues": "https://github.com/DataTables/Dist-DataTables-RowReorder-Bootstrap5/issues",
+                "source": "https://github.com/DataTables/Dist-DataTables-RowReorder-Bootstrap5"
+            },
+            "time": "2022-03-31T11:02:17+00:00"
+        },
+        {
+            "name": "datatables.net/datatables.net-searchpanes",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DataTables/Dist-DataTables-SearchPanes.git",
+                "reference": "c11c8f4f0bd68ec42ad1aa79c369362db2de3092"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DataTables/Dist-DataTables-SearchPanes/zipball/c11c8f4f0bd68ec42ad1aa79c369362db2de3092",
+                "reference": "c11c8f4f0bd68ec42ad1aa79c369362db2de3092",
+                "shasum": ""
+            },
+            "require": {
+                "datatables.net/datatables.net": ">=1.11.5"
+            },
+            "default-branch": true,
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "SpryMedia",
+                    "homepage": "https://datatables.net"
+                }
+            ],
+            "description": "The SearchPanes extension for DataTables provides improved Searching functionality allowing users to select options from a Pane which will then in turn search the DataTable and return the relevant results. There are multiple configuration options available to enhance SearchPanes. This is SearchPanes for DataTables",
+            "homepage": "http://www.datatables.net/",
+            "keywords": [
+                "datatables",
+                "filtering",
+                "jquery",
+                "search",
+                "searchpanes",
+                "table"
+            ],
+            "support": {
+                "forum": "https://datatables.net/forums",
+                "source": "https://github.com/DataTables/Dist-DataTables-SearchPanes"
+            },
+            "time": "2022-03-31T11:03:16+00:00"
+        },
+        {
+            "name": "datatables.net/datatables.net-searchpanes-bs5",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DataTables/Dist-DataTables-SearchPanes-Bootstrap5.git",
+                "reference": "0ce73613e53e698b77de5dbfd249b99ac188e258"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DataTables/Dist-DataTables-SearchPanes-Bootstrap5/zipball/0ce73613e53e698b77de5dbfd249b99ac188e258",
+                "reference": "0ce73613e53e698b77de5dbfd249b99ac188e258",
+                "shasum": ""
+            },
+            "require": {
+                "datatables.net/datatables.net-bs5": ">=1.11.5",
+                "datatables.net/datatables.net-searchpanes": ">=2.0.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "SpryMedia",
+                    "homepage": "https://datatables.net"
+                }
+            ],
+            "description": "The SearchPanes extension for DataTables provides improved Searching functionality allowing users to select options from a Pane which will then in turn search the DataTable and return the relevant results. There are multiple configuration options available to enhance SearchPanes. This is SearchPanes for DataTables with styling for [Bootstrap5](https://getbootstrap.com/)",
+            "homepage": "http://www.datatables.net/",
+            "keywords": [
+                "bootstrap",
+                "bootstrap5",
+                "datatables",
+                "filtering",
+                "jquery",
+                "search",
+                "searchpanes",
+                "table"
+            ],
+            "support": {
+                "forum": "https://datatables.net/forums",
+                "issues": "https://github.com/DataTables/Dist-DataTables-SearchPanes-Bootstrap5/issues",
+                "source": "https://github.com/DataTables/Dist-DataTables-SearchPanes-Bootstrap5"
+            },
+            "time": "2022-03-31T11:03:22+00:00"
+        },
+        {
+            "name": "datatables/datatables",
+            "version": "1.10.21",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DataTables/DataTables.git",
+                "reference": "83e59694a105225ff889ddfa0d723a3ab24fda78"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DataTables/DataTables/zipball/83e59694a105225ff889ddfa0d723a3ab24fda78",
+                "reference": "83e59694a105225ff889ddfa0d723a3ab24fda78",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "DataTables is a plug-in for the jQuery Javascript library. It is a highly flexible tool, based upon the foundations of progressive enhancement, which will add advanced interaction controls to any HTML table.",
+            "homepage": "http://www.datatables.net/",
+            "support": {
+                "forum": "https://datatables.net/forums",
+                "source": "https://github.com/DataTables/DataTablesSrc/"
+            },
+            "time": "2020-05-21T10:08:44+00:00"
+        },
+        {
+            "name": "twbs/bootstrap",
+            "version": "v5.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twbs/bootstrap.git",
+                "reference": "1a6fdfae6be09b09eaced8f0e442ca6f7680a61e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/1a6fdfae6be09b09eaced8f0e442ca6f7680a61e",
+                "reference": "1a6fdfae6be09b09eaced8f0e442ca6f7680a61e",
+                "shasum": ""
+            },
+            "replace": {
+                "twitter/bootstrap": "self.version"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mark Otto",
+                    "email": "markdotto@gmail.com"
+                },
+                {
+                    "name": "Jacob Thornton",
+                    "email": "jacobthornton@gmail.com"
+                }
+            ],
+            "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
+            "homepage": "https://getbootstrap.com/",
+            "keywords": [
+                "JS",
+                "css",
+                "framework",
+                "front-end",
+                "mobile-first",
+                "responsive",
+                "sass",
+                "web"
+            ],
+            "support": {
+                "issues": "https://github.com/twbs/bootstrap/issues",
+                "source": "https://github.com/twbs/bootstrap/tree/v5.1.3"
+            },
+            "time": "2021-10-09T06:43:19+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "datatables.net/datatables.net-bs5": 20,
+        "datatables.net/datatables.net-autofill": 20,
+        "datatables.net/datatables.net-autofill-bs5": 20,
+        "datatables.net/datatables.net-rowreorder": 20,
+        "datatables.net/datatables.net-rowreorder-bs5": 20,
+        "datatables.net/datatables.net-fixedheader": 20,
+        "datatables.net/datatables.net-fixedheader-bs5": 20,
+        "datatables.net/datatables.net-keytable": 20,
+        "datatables.net/datatables.net-keytable-bs5": 20,
+        "datatables.net/datatables.net-searchpanes": 20,
+        "datatables.net/datatables.net-searchpanes-bs5": 20
+    },
+    "prefer-stable": true,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=8.1",
+        "ext-mysqli": "*"
+    },
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}
