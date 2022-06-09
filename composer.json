@@ -1,6 +1,8 @@
 {
     "name": "datatableswebutility/dwuty",
     "version": "dev-main",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "description": "tabletools ajax",
     "homepage": "http://datatableswebutility.com/",
     "authors": [
@@ -21,7 +23,8 @@
         "ext-mysqli": "*",
         "twbs/bootstrap": "5.*",
         "datatables/datatables": "^1.10",
-        "components/jquery": "3.5.1"
+        "select2/select2": "^4.0",
+        "components/jquery": "^3.6"
     }, 
     "autoload": {
         "psr-4": {
