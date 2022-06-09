@@ -104,269 +104,288 @@ class webutility
             }
         }
         ?>
-        <script type="text/javascript">
-            $(document).ready(function() {
-                function fetch_data_<?= $this->tbl_ID; ?>() {
-                    var table = $("#<?= $this->tbl_ID; ?>").DataTable({
-                        language: {                    
-                            "emptyTable": "Keine Daten in der Tabelle vorhanden",
-                            "info": "_START_ bis _END_ von _TOTAL_ Einträgen",
-                            "infoEmpty": "Keine Daten vorhanden",
-                            "infoFiltered": "(gefiltert von _MAX_ Einträgen)",
-                            "infoThousands": ".",
-                            "loadingRecords": "Wird geladen ..",
-                            "processing": "Bitte warten ..",
-                            "paginate": {
-                                "first": "Erste",
-                                "previous": "Zurück",
-                                "next": "Nächste",
-                                "last": "Letzte"
-                            },
-                            "aria": {
-                                "sortAscending": ": aktivieren, um Spalte aufsteigend zu sortieren",
-                                "sortDescending": ": aktivieren, um Spalte absteigend zu sortieren"
-                            },
-                            "select": {
-                                "rows": {
-                                    "_": "%d Zeilen ausgewählt",
-                                    "1": "1 Zeile ausgewählt"
-                                },
-                                "cells": {
-                                    "1": "1 Zelle ausgewählt",
-                                    "_": "%d Zellen ausgewählt"
-                                },
-                                "columns": {
-                                    "1": "1 Spalte ausgewählt",
-                                    "_": "%d Spalten ausgewählt"
-                                }
-                            },
-                            "buttons": {
-                                "print": "Drucken",
-                                "copy": "Kopieren",
-                                "copyTitle": "In Zwischenablage kopieren",
-                                "copySuccess": {
-                                    "_": "%d Zeilen kopiert",
-                                    "1": "1 Zeile kopiert"
-                                },
-                                "collection": "Aktionen <span class=\"ui-button-icon-primary ui-icon ui-icon-triangle-1-s\"><\/span>",
-                                "colvis": "Spaltensichtbarkeit",
-                                "colvisRestore": "Sichtbarkeit wiederherstellen",
-                                "copyKeys": "Drücken Sie die Taste <i>ctrl<\/i> oder <i>⌘<\/i> + <i>C<\/i> um die Tabelle<br \/>in den Zwischenspeicher zu kopieren.<br \/><br \/>Um den Vorgang abzubrechen, klicken Sie die Nachricht an oder drücken Sie auf Escape.",
-                                "csv": "CSV",
-                                "excel": "Excel",
-                                "pageLength": {
-                                    "-1": "Alle Zeilen anzeigen",
-                                    "_": "%d Zeilen anzeigen"
-                                },
-                                "pdf": "PDF"
-                            },
-                            "autoFill": {
-                                "cancel": "Abbrechen",
-                                "fill": "Alle Zellen mit <i>%d<i> füllen<\/i><\/i>",
-                                "fillHorizontal": "Alle horizontalen Zellen füllen",
-                                "fillVertical": "Alle vertikalen Zellen füllen"
-                            },
-                            "decimal": ",",
-                            "search": "Suche:",
-                            "searchBuilder": {
-                                "add": "Bedingung hinzufügen",
-                                "button": {
-                                    "0": "Such-Baukasten",
-                                    "_": "Such-Baukasten (%d)"
-                                },
-                                "condition": "Bedingung",
-                                "conditions": {
-                                    "date": {
-                                        "after": "Nach",
-                                        "before": "Vor",
-                                        "between": "Zwischen",
-                                        "empty": "Leer",
-                                        "not": "Nicht",
-                                        "notBetween": "Nicht zwischen",
-                                        "notEmpty": "Nicht leer",
-                                        "equals": "Gleich"
+            <footer>
+                <script type="text/javascript">
+                    $(document).ready(function() {
+                        function fetch_data_<?= $this->tbl_ID; ?>() {
+                            var table = $("#<?= $this->tbl_ID; ?>").DataTable({
+                                language: {                    
+                                    "emptyTable": "Keine Daten in der Tabelle vorhanden",
+                                    "info": "_START_ bis _END_ von _TOTAL_ Einträgen",
+                                    "infoEmpty": "Keine Daten vorhanden",
+                                    "infoFiltered": "(gefiltert von _MAX_ Einträgen)",
+                                    "infoThousands": ".",
+                                    "loadingRecords": "Wird geladen ..",
+                                    "processing": "Bitte warten ..",
+                                    "paginate": {
+                                        "first": "Erste",
+                                        "previous": "Zurück",
+                                        "next": "Nächste",
+                                        "last": "Letzte"
                                     },
-                                    "number": {
-                                        "between": "Zwischen",
-                                        "empty": "Leer",
-                                        "equals": "Entspricht",
-                                        "gt": "Größer als",
-                                        "gte": "Größer als oder gleich",
-                                        "lt": "Kleiner als",
-                                        "lte": "Kleiner als oder gleich",
-                                        "not": "Nicht",
-                                        "notBetween": "Nicht zwischen",
-                                        "notEmpty": "Nicht leer"
+                                    "aria": {
+                                        "sortAscending": ": aktivieren, um Spalte aufsteigend zu sortieren",
+                                        "sortDescending": ": aktivieren, um Spalte absteigend zu sortieren"
                                     },
-                                    "string": {
-                                        "contains": "Beinhaltet",
-                                        "empty": "Leer",
-                                        "endsWith": "Endet mit",
-                                        "equals": "Entspricht",
-                                        "not": "Nicht",
-                                        "notEmpty": "Nicht leer",
-                                        "startsWith": "Startet mit",
-                                        "notContains": "enthält nicht",
-                                        "notStarts": "startet nicht mit",
-                                        "notEnds": "endet nicht mit"
+                                    "select": {
+                                        "rows": {
+                                            "_": "%d Zeilen ausgewählt",
+                                            "1": "1 Zeile ausgewählt"
+                                        },
+                                        "cells": {
+                                            "1": "1 Zelle ausgewählt",
+                                            "_": "%d Zellen ausgewählt"
+                                        },
+                                        "columns": {
+                                            "1": "1 Spalte ausgewählt",
+                                            "_": "%d Spalten ausgewählt"
+                                        }
                                     },
-                                    "array": {
-                                        "equals": "ist gleich",
-                                        "empty": "ist leer",
-                                        "contains": "enthält",
-                                        "not": "ist ungleich",
-                                        "notEmpty": "ist nicht leer",
-                                        "without": "aber nicht"
-                                    }
+                                    "buttons": {
+                                        "print": "Drucken",
+                                        "copy": "Kopieren",
+                                        "copyTitle": "In Zwischenablage kopieren",
+                                        "copySuccess": {
+                                            "_": "%d Zeilen kopiert",
+                                            "1": "1 Zeile kopiert"
+                                        },
+                                        "collection": "Aktionen <span class=\"ui-button-icon-primary ui-icon ui-icon-triangle-1-s\"><\/span>",
+                                        "colvis": "Spaltensichtbarkeit",
+                                        "colvisRestore": "Sichtbarkeit wiederherstellen",
+                                        "copyKeys": "Drücken Sie die Taste <i>ctrl<\/i> oder <i>⌘<\/i> + <i>C<\/i> um die Tabelle<br \/>in den Zwischenspeicher zu kopieren.<br \/><br \/>Um den Vorgang abzubrechen, klicken Sie die Nachricht an oder drücken Sie auf Escape.",
+                                        "csv": "CSV",
+                                        "excel": "Excel",
+                                        "pageLength": {
+                                            "-1": "Alle Zeilen anzeigen",
+                                            "_": "%d Zeilen anzeigen"
+                                        },
+                                        "pdf": "PDF"
+                                    },
+                                    "autoFill": {
+                                        "cancel": "Abbrechen",
+                                        "fill": "Alle Zellen mit <i>%d<i> füllen<\/i><\/i>",
+                                        "fillHorizontal": "Alle horizontalen Zellen füllen",
+                                        "fillVertical": "Alle vertikalen Zellen füllen"
+                                    },
+                                    "decimal": ",",
+                                    "search": "Suche:",
+                                    "searchBuilder": {
+                                        "add": "Bedingung hinzufügen",
+                                        "button": {
+                                            "0": "Such-Baukasten",
+                                            "_": "Such-Baukasten (%d)"
+                                        },
+                                        "condition": "Bedingung",
+                                        "conditions": {
+                                            "date": {
+                                                "after": "Nach",
+                                                "before": "Vor",
+                                                "between": "Zwischen",
+                                                "empty": "Leer",
+                                                "not": "Nicht",
+                                                "notBetween": "Nicht zwischen",
+                                                "notEmpty": "Nicht leer",
+                                                "equals": "Gleich"
+                                            },
+                                            "number": {
+                                                "between": "Zwischen",
+                                                "empty": "Leer",
+                                                "equals": "Entspricht",
+                                                "gt": "Größer als",
+                                                "gte": "Größer als oder gleich",
+                                                "lt": "Kleiner als",
+                                                "lte": "Kleiner als oder gleich",
+                                                "not": "Nicht",
+                                                "notBetween": "Nicht zwischen",
+                                                "notEmpty": "Nicht leer"
+                                            },
+                                            "string": {
+                                                "contains": "Beinhaltet",
+                                                "empty": "Leer",
+                                                "endsWith": "Endet mit",
+                                                "equals": "Entspricht",
+                                                "not": "Nicht",
+                                                "notEmpty": "Nicht leer",
+                                                "startsWith": "Startet mit",
+                                                "notContains": "enthält nicht",
+                                                "notStarts": "startet nicht mit",
+                                                "notEnds": "endet nicht mit"
+                                            },
+                                            "array": {
+                                                "equals": "ist gleich",
+                                                "empty": "ist leer",
+                                                "contains": "enthält",
+                                                "not": "ist ungleich",
+                                                "notEmpty": "ist nicht leer",
+                                                "without": "aber nicht"
+                                            }
+                                        },
+                                        "data": "Daten",
+                                        "deleteTitle": "Filterregel entfernen",
+                                        "leftTitle": "Äußere Kriterien",
+                                        "logicAnd": "UND",
+                                        "logicOr": "ODER",
+                                        "rightTitle": "Innere Kriterien",
+                                        "title": {
+                                            "0": "Such-Baukasten",
+                                            "_": "Such-Baukasten (%d)"
+                                        },
+                                        "value": "Wert",
+                                        "clearAll": "Alle löschen"
+                                    },
+                                    "searchPanes": {
+                                        "clearMessage": "Leeren",
+                                        "collapse": {
+                                            "0": "Suchmasken",
+                                            "_": "Suchmasken (%d)"
+                                        },
+                                        "countFiltered": "{shown} ({total})",
+                                        "emptyPanes": "Keine Suchmasken",
+                                        "loadMessage": "Lade Suchmasken..",
+                                        "title": "Aktive Filter: %d",
+                                        "showMessage": "zeige Alle",
+                                        "collapseMessage": "Alle einklappen",
+                                        "count": "{total}"
+                                    },
+                                    "thousands": ".",
+                                    "zeroRecords": "Keine passenden Einträge gefunden",
+                                    "lengthMenu": "_MENU_ Zeilen anzeigen",
+                                    "datetime": {
+                                        "previous": "Vorher",
+                                        "next": "Nachher",
+                                        "hours": "Stunden",
+                                        "minutes": "Minuten",
+                                        "seconds": "Sekunden",
+                                        "unknown": "Unbekannt",
+                                        "weekdays": [
+                                            "Sonntag",
+                                            "Montag",
+                                            "Dienstag",
+                                            "Mittwoch",
+                                            "Donnerstag",
+                                            "Freitag",
+                                            "Samstag"
+                                        ],
+                                        "months": [
+                                            "Januar",
+                                            "Februar",
+                                            "März",
+                                            "April",
+                                            "Mai",
+                                            "Juni",
+                                            "Juli",
+                                            "August",
+                                            "September",
+                                            "Oktober",
+                                            "November",
+                                            "Dezember"
+                                        ]
+                                    },
                                 },
-                                "data": "Daten",
-                                "deleteTitle": "Filterregel entfernen",
-                                "leftTitle": "Äußere Kriterien",
-                                "logicAnd": "UND",
-                                "logicOr": "ODER",
-                                "rightTitle": "Innere Kriterien",
-                                "title": {
-                                    "0": "Such-Baukasten",
-                                    "_": "Such-Baukasten (%d)"
-                                },
-                                "value": "Wert",
-                                "clearAll": "Alle löschen"
-                            },
-                            "searchPanes": {
-                                "clearMessage": "Leeren",
-                                "collapse": {
-                                    "0": "Suchmasken",
-                                    "_": "Suchmasken (%d)"
-                                },
-                                "countFiltered": "{shown} ({total})",
-                                "emptyPanes": "Keine Suchmasken",
-                                "loadMessage": "Lade Suchmasken..",
-                                "title": "Aktive Filter: %d",
-                                "showMessage": "zeige Alle",
-                                "collapseMessage": "Alle einklappen",
-                                "count": "{total}"
-                            },
-                            "thousands": ".",
-                            "zeroRecords": "Keine passenden Einträge gefunden",
-                            "lengthMenu": "_MENU_ Zeilen anzeigen",
-                            "datetime": {
-                                "previous": "Vorher",
-                                "next": "Nachher",
-                                "hours": "Stunden",
-                                "minutes": "Minuten",
-                                "seconds": "Sekunden",
-                                "unknown": "Unbekannt",
-                                "weekdays": [
-                                    "Sonntag",
-                                    "Montag",
-                                    "Dienstag",
-                                    "Mittwoch",
-                                    "Donnerstag",
-                                    "Freitag",
-                                    "Samstag"
+                                stateSave: true,
+                                processing: true,
+                                cache: false,
+                                searchDelay: 1000, // default null = 400ms
+                                serverSide: true,
+                                columnDefs: [
+                                    <?php
+                                        $aryColumndef= array();
+                                        foreach ($this->columns as $columns_key => $columns_value) {
+                                            ($columns_value['ACTION'] == 2 && isset($this->ajax_update_url))?$classname[] = "contenteditable":"";
+                                            switch ($columns_value["TYP"]) {
+                                                case 1: // CHECKBOX
+                                                    $classname[] = "text-center";
+                                                    break;
+                                                default:
+                                                    // code
+                                                    break;
+                                            }
+                                            $aryColumndef[]=array(
+                                                "targets: ".$columns_key
+                                                , ($columns_value["ORDERABLE"] == 1)?"orderable: true":"orderable: false"
+                                                , ($columns_value["SEARCHABLE"] == 1)?"searchable: true":"searchable: false"
+                                                , (isset($classname))?"className: '".implode(" ",$classname)."'":""
+                                            ); 
+                                        }
+                                        foreach ($aryColumndef as $row) {
+                                            echo "{".implode(", ", $row)."},";
+                                        }
+                                    ?>
                                 ],
-                                "months": [
-                                    "Januar",
-                                    "Februar",
-                                    "März",
-                                    "April",
-                                    "Mai",
-                                    "Juni",
-                                    "Juli",
-                                    "August",
-                                    "September",
-                                    "Oktober",
-                                    "November",
-                                    "Dezember"
-                                ]
-                            },
-                        },
-                        stateSave: true,
-                        processing: true,
-                        cache: false,
-                        searchDelay: 1000, // default null = 400ms
-                        serverSide: true,
-                        columnDefs: [
-                            <?php
-                                $aryColumndef= array();
-                                foreach ($this->columns as $columns_key => $columns_value) {
-                                    ($columns_value['ACTION'] == 2 && isset($this->ajax_update_url))?$classname[] = "contenteditable":"";
-                                    switch ($columns_value["TYP"]) {
-                                        case 1: // CHECKBOX
-                                            $classname[] = "text-center";
-                                            break;
-                                        default:
-                                            // code
-                                            break;
+                                ajax: {
+                                    url: "<?= $this->ajax_fetch_url; ?>",
+                                    type: "POST",
+                                    data: {
+                                        pkfield: "<?= $this->pkfield; ?>",
+                                        datasource: "<?= $this->ajax_fetch_datasource; ?>",
+                                        where: "<?= $this->ajax_fetch_where; ?>",
+                                        columnsdata: '<?= json_encode($columnsdata, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE); ?>'}
+                                },
+                                rowId: "DT_RowId",
+                                order: [
+                                    [
+                                        "<?= intval($default_order); ?>",
+                                        "<?= $default_order_dir; ?>"
+                                    ]
+                                ],
+                                columns: [
+                                    <?php
+                                        foreach ($this->columns as $column) {
+                                            echo "{";
+                                            echo "name: \"" . $column["SQLNAME"] . "\", ";
+                                            echo "data: \"" . $column["NAME"] . "\", ";
+                                            echo "celltype: \"" . $column["TYP"] . "\", ";
+                                            switch ($column['TYP']) {
+                                                case 1: // CHECKBOX
+                                                    ?> render: function(data) {
+                                                            is_checked = (data == true) ? 'checked' : '';
+                                                            return '<div class="form-switch"><input class="form-check-input" type="checkbox" ' + is_checked + '></div>';
+                                                        },
+                                                    <?php
+                                                    break;
+                                                case 2: // DROPDOWN_FIELD
+                                                    ?> render: function(data) {
+                                                        $select = $('<select class="DT_S2_<?= $column['NAME']; ?>"></select>', {})
+                                                        if (data != 0 && data != null) {
+                                                            $option = $("<option>" + $<?= $column['NAME']; ?>[data] + "</option>", {});
+                                                            $option.attr("selected", "selected")
+                                                            $select.append($option);
+                                                            $option.attr("value", data);
+                                                            $select.append($option);
+                                                            $select.attr("data-search", $<?= $column['NAME']; ?>[data]);
+                                                        }
+                                                        return $select.prop("outerHTML");
+                                                    },
+                                                    <?php
+                                                    break;
+                                                
+                                                default:
+                                                    # code...
+                                                    break;
+                                            }
+                                            // isset($column["DT_CONFIG"])?$column["DT_CONFIG"]:"";
+                                            echo "},";
+                                        }
+                                    if (isset($this->ajax_delete_url)) {
+                                        ?> {
+                                                orderable: false,
+                                                searchable: false,
+                                                className: "align-middle",
+                                                // render: delete_button_
+                                            }
+                                        <?php
                                     }
-                                    $aryColumndef[]=array(
-                                        "targets: ".$columns_key
-                                        , ($columns_value["ORDERABLE"] == 1)?"orderable: true":"orderable: false"
-                                        , ($columns_value["SEARCHABLE"] == 1)?"searchable: true":"searchable: false"
-                                        , (isset($classname))?"className: '".implode(" ",$classname)."'":""
-                                    ); 
-                                }
-                                foreach ($aryColumndef as $row) {
-                                    echo "{".implode(", ", $row)."},";
-                                }
-                            ?>
-                        ],
-                        ajax: {
-                            url: "<?= $this->ajax_fetch_url; ?>",
-                            type: "POST",
-                            data: {
-                                pkfield: "<?= $this->pkfield; ?>",
-                                datasource: "<?= $this->ajax_fetch_datasource; ?>",
-                                where: "<?= $this->ajax_fetch_where; ?>",
-                                columnsdata: '<?= json_encode($columnsdata, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE); ?>'}
-                        },
-                        rowId: "DT_RowId",
-                        order: [
-                            [
-                                "<?= intval($default_order); ?>",
-                                "<?= $default_order_dir; ?>"
-                            ]
-                        ],
-                        columns: [
-                            <?php
-                                foreach ($this->columns as $column) {
-                                    echo "{";
-                                    echo "name: \"" . $column["SQLNAME"] . "\", ";
-                                    echo "data: \"" . $column["NAME"] . "\", ";
-                                    echo "celltype: \"" . $column["TYP"] . "\", ";
-                                    switch ($column['TYP']) {
-                                        case 1: // CHECKBOX
-                                            ?> render: function(data, type, row, meta) {
-                                                    is_checked = (data == true) ? 'checked' : '';
-                                                    return '<div class="form-switch"><input class="form-check-input" type="checkbox" ' + is_checked + '></div>';
-                                                },
-                                            <?php
-                                            # code...
-                                            break;
-                                        
-                                        default:
-                                            # code...
-                                            break;
-                                    }
-                                    isset($column["DT_CONFIG"])?$column["DT_CONFIG"]:"";
-                                    echo "},";
-                                }
-                            if (isset($this->ajax_delete_url)) {
-                                ?> {
-                                        orderable: false,
-                                        searchable: false,
-                                        className: "align-middle",
-                                        // render: delete_button_
-                                    }
-                                <?php
-                            }
-                            ?>
-                        ],
+                                    ?>
+                                ],
+                            });
+                        }
+                        fetch_data_<?= $this->tbl_ID; ?>();
+                        $("#select").select2({
+                            language: "de"
+                        });
                     });
-                }
-                fetch_data_<?= $this->tbl_ID; ?>();
-            });
-        </script>
+                </script>
+            </footer>
         <?php
     }
     public function new_column(
