@@ -22,9 +22,10 @@
         "php" : ">=8.1",
         "ext-mysqli": "*",
         "twbs/bootstrap": "^5.1",
-        "datatables/datatables": "^1.10",
         "select2/select2": "^4.0",
-        "components/jquery": "^3.6"
+        "components/jquery": "^3.6",
+        "datatables.net/datatables.net": "dev-master",
+        "datatables.net/datatables.net-bs5": "dev-master"
     }, 
     "autoload": {
         "psr-4": {
