@@ -24,8 +24,7 @@
         "twbs/bootstrap": "^5.1",
         "select2/select2": "^4.0",
         "components/jquery": "^3.6",
-        "datatables.net/datatables.net": "dev-master",
-        "datatables.net/datatables.net-bs5": "dev-master"
+        "datatables/datatables": "^1.10"
     }, 
     "autoload": {
         "psr-4": {

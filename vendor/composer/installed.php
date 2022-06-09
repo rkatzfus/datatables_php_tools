@@ -19,26 +19,13 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
-        'datatables.net/datatables.net' => array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
-            'reference' => '85c049199a0832d750c188477b3ad9adca688fa5',
+        'datatables/datatables' => array(
+            'pretty_version' => '1.10.21',
+            'version' => '1.10.21.0',
+            'reference' => '83e59694a105225ff889ddfa0d723a3ab24fda78',
             'type' => 'library',
-            'install_path' => __DIR__ . '/../datatables.net/datatables.net',
-            'aliases' => array(
-                0 => '9999999-dev',
-            ),
-            'dev_requirement' => false,
-        ),
-        'datatables.net/datatables.net-bs5' => array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
-            'reference' => '72fb44004a0b7c32e369c7f77eca19fe30c337d9',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../datatables.net/datatables.net-bs5',
-            'aliases' => array(
-                0 => '9999999-dev',
-            ),
+            'install_path' => __DIR__ . '/../datatables/datatables',
+            'aliases' => array(),
             'dev_requirement' => false,
         ),
         'datatableswebutility/dwuty' => array(
