@@ -1,8 +1,8 @@
 <?php return array(
     'root' => array(
         'name' => 'datatableswebutility/dwuty',
-        'pretty_version' => 'dev-main',
-        'version' => 'dev-main',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
         'reference' => NULL,
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
@@ -19,18 +19,20 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
-        'datatables/datatables' => array(
-            'pretty_version' => '1.10.21',
-            'version' => '1.10.21.0',
-            'reference' => '83e59694a105225ff889ddfa0d723a3ab24fda78',
+        'datatables.net/datatables.net' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => '85c049199a0832d750c188477b3ad9adca688fa5',
             'type' => 'library',
-            'install_path' => __DIR__ . '/../datatables/datatables',
-            'aliases' => array(),
+            'install_path' => __DIR__ . '/../datatables.net/datatables.net',
+            'aliases' => array(
+                0 => '9999999-dev',
+            ),
             'dev_requirement' => false,
         ),
         'datatableswebutility/dwuty' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
             'reference' => NULL,
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
