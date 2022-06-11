@@ -112,7 +112,7 @@
                 "shasum": ""
             },
             "require": {
-                "datatables.net/datatables.net": ">=1.11.5",
+                "datatables.net/datatables.net": "dev-master",
                 "twbs/bootstrap": "5.*"
             },
             "default-branch": true,
