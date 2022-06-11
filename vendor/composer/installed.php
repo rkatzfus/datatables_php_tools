@@ -3,7 +3,7 @@
         'name' => 'datatableswebutility/dwuty',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'f624d47ecee9c799e1da1a4c27d98c570a10edd0',
+        'reference' => '09fd94883a0a7d419b7fe1c6040c99056a82dd2a',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -44,7 +44,7 @@
         'datatableswebutility/dwuty' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'f624d47ecee9c799e1da1a4c27d98c570a10edd0',
+            'reference' => '09fd94883a0a7d419b7fe1c6040c99056a82dd2a',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
