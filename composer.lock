@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f4ffdd1484e7719334840703c3c21468",
+    "content-hash": "9a1fc5a784b133bc7b2a613d7f970a0e",
     "packages": [
         {
             "name": "components/jquery",
@@ -144,33 +144,6 @@
             "time": "2022-03-31T11:00:00+00:00"
         },
         {
-            "name": "datatables/datatables",
-            "version": "1.10.21",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/DataTables/DataTables.git",
-                "reference": "83e59694a105225ff889ddfa0d723a3ab24fda78"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/DataTables/DataTables/zipball/83e59694a105225ff889ddfa0d723a3ab24fda78",
-                "reference": "83e59694a105225ff889ddfa0d723a3ab24fda78",
-                "shasum": ""
-            },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "DataTables is a plug-in for the jQuery Javascript library. It is a highly flexible tool, based upon the foundations of progressive enhancement, which will add advanced interaction controls to any HTML table.",
-            "homepage": "http://www.datatables.net/",
-            "support": {
-                "forum": "https://datatables.net/forums",
-                "source": "https://github.com/DataTables/DataTablesSrc/"
-            },
-            "time": "2020-05-21T10:08:44+00:00"
-        },
-        {
             "name": "select2/select2",
             "version": "4.0.13",
             "source": {
@@ -264,9 +237,17 @@
         }
     ],
     "packages-dev": [],
-    "aliases": [],
+    "aliases": [
+        {
+            "package": "datatables.net/datatables.net",
+            "version": "9999999-dev",
+            "alias": "1.11.5",
+            "alias_normalized": "1.11.5.0"
+        }
+    ],
     "minimum-stability": "dev",
     "stability-flags": {
+        "datatables.net/datatables.net": 20,
         "datatables.net/datatables.net-bs5": 20
     },
     "prefer-stable": true,
