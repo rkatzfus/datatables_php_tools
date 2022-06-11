@@ -30,6 +30,17 @@
             ),
             'dev_requirement' => false,
         ),
+        'datatables.net/datatables.net-bs5' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => '72fb44004a0b7c32e369c7f77eca19fe30c337d9',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../datatables.net/datatables.net-bs5',
+            'aliases' => array(
+                0 => '9999999-dev',
+            ),
+            'dev_requirement' => false,
+        ),
         'datatableswebutility/dwuty' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',

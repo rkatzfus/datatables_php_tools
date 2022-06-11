@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
 	<?php
-		require __DIR__ . '/vendor/autoload.php';
+		require_once __DIR__ . '/vendor/autoload.php';
 		use App\webutility;
+		use App\crud\read
 	?>
 	<head>
 		<link rel="stylesheet" type="text/css" href="/vendor/twbs/bootstrap/dist/css/bootstrap.min.css"/>    
-		<link rel="stylesheet" type="text/css" href="/vendor/datatables/datatables/media/css/dataTables.bootstrap.min.css"/>
-		<link rel="stylesheet" type="text/css" href="/vendor/datatableswebutility/dwuty/vendor/select2/select2/dist/css/select2.min.css"/>
+		<link rel="stylesheet" type="text/css" href="/vendor/datatables.net/datatables.net-bs5/css/dataTables.bootstrap5.min.css"/>
+		<!-- <link rel="stylesheet" type="text/css" href="/vendor/datatableswebutility/dwuty/vendor/select2/select2/dist/css/select2.min.css"/> -->
 	
 		<script type="text/javascript" src="/vendor/components/jquery/jquery.min.js"></script>
 		<script type="text/javascript" src="/vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-		<script type="text/javascript" src="/vendor/datatables/datatables/media/js/jquery.dataTables.min.js"></script>
-		<script type="text/javascript" src="/vendor/datatableswebutility/dwuty/vendor/select2/select2/dist/js/select2.min.js"></script>
-		<script type="text/javascript" src="/vendor/datatableswebutility/dwuty/vendor/select2/select2/dist/js/i18n/de.js"></script>
+		<script type="text/javascript" src="/vendor/datatables.net/datatables.net/js/jquery.dataTables.min.js"></script>
+		<script type="text/javascript" src="/vendor/datatables.net/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+		<!-- <script type="text/javascript" src="/vendor/datatableswebutility/dwuty/vendor/select2/select2/dist/js/select2.min.js"></script>
+		<script type="text/javascript" src="/vendor/datatableswebutility/dwuty/vendor/select2/select2/dist/js/i18n/de.js"></script> -->
 	</head>
 	<body>
 		<div class="container-fluid">
@@ -21,7 +23,7 @@
 				$pkfield_xxxTESTxxx = "root.ID";
 				$array_AJAX_xxxTESTxxx = array();
 				$array_AJAX_xxxTESTxxx["fetch"] = array(
-					"url" => "/vendor/datatableswebutility/dwuty/read.php"
+					"url" => "/read.php"
 					, "datasource" => "MYSQL_DATABASE.root_table root"
 				);
 				$obj_webutility = new webutility("dte_xxxTESTxxx", $array_AJAX_xxxTESTxxx, $pkfield_xxxTESTxxx);
@@ -32,7 +34,7 @@
 					, "SEARCHABLE" => false
 				);
 				$arySetting_DROPDOWN_FIELD = array(
-					"AJAX" => "/ssp_source/CRUD/select2/fetch_crud_select2.php"
+					"AJAX" => "/read_select2.php"
 					, "SELECT2" => array(
 						"columns" => array(
 						  "id" => "dropdown.ID"
@@ -43,7 +45,7 @@
 				);
 				$obj_webutility->new_column("root.TEXT_FIELD", "TEXT_FIELD", "column: TEXT_FIELD", VIEW, TEXT_FIELD);
 				$obj_webutility->new_column("root.CHECKBOX", "CHECKBOX", "column: CHECKBOX", VIEW, CHECKBOX, $arySetting_CHECKBOX);
-				$obj_webutility->new_column("root.REF_DROPDOWN", "DROPDOWN_FIELD", "column: DROPDOWN_FIELD", VIEW, DROPDOWN_FIELD, $arySetting_DROPDOWN_FIELD);
+				// $obj_webutility->new_column("root.REF_DROPDOWN", "DROPDOWN_FIELD", "column: DROPDOWN_FIELD", VIEW, DROPDOWN_FIELD, $arySetting_DROPDOWN_FIELD);
 				$defOrderby_xxxTESTxxx = 0;
 				$obj_webutility->table_header();
 			?>

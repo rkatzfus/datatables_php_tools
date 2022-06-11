@@ -342,23 +342,7 @@ class webutility
                                                             return '<div class="form-switch"><input class="form-check-input" type="checkbox" ' + is_checked + '></div>';
                                                         },
                                                     <?php
-                                                    break;
-                                                case 2: // DROPDOWN_FIELD
-                                                    ?> render: function(data) {
-                                                        $select = $('<select class="DT_S2_<?= $column['NAME']; ?>"></select>', {})
-                                                        if (data != 0 && data != null) {
-                                                            $option = $("<option>" + $<?= $column['NAME']; ?>[data] + "</option>", {});
-                                                            $option.attr("selected", "selected")
-                                                            $select.append($option);
-                                                            $option.attr("value", data);
-                                                            $select.append($option);
-                                                            $select.attr("data-search", $<?= $column['NAME']; ?>[data]);
-                                                        }
-                                                        return $select.prop("outerHTML");
-                                                    },
-                                                    <?php
-                                                    break;
-                                                
+                                                    break;  
                                                 default:
                                                     # code...
                                                     break;
@@ -380,9 +364,6 @@ class webutility
                             });
                         }
                         fetch_data_<?= $this->tbl_ID; ?>();
-                        $("#select").select2({
-                            language: "de"
-                        });
                     });
                 </script>
             </footer>
@@ -423,38 +404,6 @@ class webutility
                 case "MODAL":
                     $this->columns[$column_key]["SQLNAME"] = "concat('" . json_encode($arySetting["MODAL"], JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE) . "')";
                     $this->columns[$column_key]["MODAL"] = json_encode($arySetting["MODAL"], JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE);
-                    break;
-                case "SELECT2": 
-                    switch ($Typ) {
-                    case 2:
-                        $aryColumns = $arySetting["SELECT2"]["columns"];
-                        $this->obj_ssp->set_length(-1); 
-                        $this->obj_ssp->set_Select($aryColumns);
-                        $this->obj_ssp->set_From($arySetting["SELECT2"]["from"]);
-                        (isset($arySetting["SELECT2"]["where"]))?$this->obj_ssp->set_Where($arySetting["SELECT2"]["where"]):$this->obj_ssp->set_Where();
-                        $sql = $this->obj_ssp->set_data_sql();
-                    //   $ary_Select2Initial = $this->objMSSQL->exec_sql_pk_value($sql, "id", "text");
-                    //   $this->columns[$column_key]["JSON"] =  $ary_Select2Initial;
-                        break;
-                    case 8: // DT_EDIT_DROPDOWN_MULTI_v2
-                        $this->columns[$column_key]["SQLNAME"] = "substring((select ',' + cast(" . $arySetting["SELECT2"]["columns"]["text"] . " as varchar) from " . $arySetting["SELECT2"]["from"] . " where " . $this->pkfield . " = " . $arySetting["SELECT2"]["columns"]["id"] . " and " . $arySetting["SELECT2"]["where"] . " for xml path('')), 2, 1000000)";
-                        $this->columns[$column_key]["SQLNAMETABLE"] = $SqlName;
-                        $aryColumns = $arySetting["SUBSELECT2"]["columns"];
-                        $this->obj_ssp->set_length(-1); 
-                        $this->obj_ssp->set_Select($aryColumns);
-                        $this->obj_ssp->set_From($arySetting["SUBSELECT2"]["from"]);
-                        (isset($arySetting["SUBSELECT2"]["where"]))?$this->obj_ssp->set_Where($arySetting["SUBSELECT2"]["where"]):$this->obj_ssp->set_Where();
-                        $sql = $this->obj_ssp->set_data_sql();
-                    //   $ary_Select2Initial = $this->objMSSQL->exec_sql_pk_value($sql, "id", "text");
-                    //   $this->columns[$column_key]["JSON"] =  $ary_Select2Initial;
-                    //   $this->columns[$column_key]["SUBSELECT2"] = $arySetting["SUBSELECT2"];
-                        break;
-                    default:
-                        # code...
-                        break;
-                    }
-                    $this->columns[$column_key]["AJAX"] = $arySetting["AJAX"];
-                    $this->columns[$column_key]["SELECT2"] = $arySetting["SELECT2"];
                     break;
                 default:
                     # code...
