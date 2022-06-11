@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'datatableswebutility/dwuty',
-        'pretty_version' => 'dev-master',
-        'version' => 'dev-master',
-        'reference' => NULL,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => 'f624d47ecee9c799e1da1a4c27d98c570a10edd0',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -42,9 +42,9 @@
             'dev_requirement' => false,
         ),
         'datatableswebutility/dwuty' => array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
-            'reference' => NULL,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => 'f624d47ecee9c799e1da1a4c27d98c570a10edd0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
