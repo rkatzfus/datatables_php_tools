@@ -23,7 +23,7 @@
 				$pkfield_xxxTESTxxx = "root.ID";
 				$array_AJAX_xxxTESTxxx = array();
 				$array_AJAX_xxxTESTxxx["fetch"] = array(
-					"url" => "/read.php"
+					"url" => "/vendor/datatableswebutility/dwuty/read.php"
 					, "datasource" => "MYSQL_DATABASE.root_table root"
 				);
 				$obj_webutility = new webutility("dte_xxxTESTxxx", $array_AJAX_xxxTESTxxx, $pkfield_xxxTESTxxx);
@@ -34,7 +34,7 @@
 					, "SEARCHABLE" => false
 				);
 				$arySetting_DROPDOWN_FIELD = array(
-					"AJAX" => "/read_select2.php"
+					"AJAX" => "/vendor/datatableswebutility/dwuty/read_select2.php"
 					, "SELECT2" => array(
 						"columns" => array(
 						  "id" => "dropdown.ID"
