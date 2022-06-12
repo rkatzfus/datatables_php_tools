@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9a1fc5a784b133bc7b2a613d7f970a0e",
+    "content-hash": "73f6b5d8e25366fc38b4676e471ebc5a",
     "packages": [
         {
             "name": "components/jquery",
@@ -96,52 +96,6 @@
                 "source": "https://github.com/DataTables/Dist-DataTables"
             },
             "time": "2022-06-07T15:26:38+00:00"
-        },
-        {
-            "name": "datatables.net/datatables.net-bs5",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/DataTables/Dist-DataTables-Bootstrap5.git",
-                "reference": "72fb44004a0b7c32e369c7f77eca19fe30c337d9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/DataTables/Dist-DataTables-Bootstrap5/zipball/72fb44004a0b7c32e369c7f77eca19fe30c337d9",
-                "reference": "72fb44004a0b7c32e369c7f77eca19fe30c337d9",
-                "shasum": ""
-            },
-            "require": {
-                "datatables.net/datatables.net": ">=1.11.5",
-                "twbs/bootstrap": "5.*"
-            },
-            "default-branch": true,
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "SpryMedia",
-                    "homepage": "https://datatables.net"
-                }
-            ],
-            "description": "DataTables is a plug-in for the jQuery Javascript library. It is a highly flexible tool, based upon the foundations of progressive enhancement, which will add advanced interaction controls to any HTML table. This is DataTables with styling for [Bootstrap5](https://getbootstrap.com/)",
-            "homepage": "http://www.datatables.net/",
-            "keywords": [
-                "bootstrap",
-                "bootstrap5",
-                "datatables",
-                "jquery",
-                "table"
-            ],
-            "support": {
-                "forum": "https://datatables.net/forums",
-                "issues": "https://github.com/DataTables/Dist-DataTables-Bootstrap5/issues",
-                "source": "https://github.com/DataTables/Dist-DataTables-Bootstrap5"
-            },
-            "time": "2022-03-31T11:00:00+00:00"
         },
         {
             "name": "select2/select2",
@@ -237,19 +191,9 @@
         }
     ],
     "packages-dev": [],
-    "aliases": [
-        {
-            "package": "datatables.net/datatables.net",
-            "version": "9999999-dev",
-            "alias": "1.11.5",
-            "alias_normalized": "1.11.5.0"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "datatables.net/datatables.net": 20,
-        "datatables.net/datatables.net-bs5": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

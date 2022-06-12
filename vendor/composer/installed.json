@@ -98,55 +98,6 @@
             "install-path": "../datatables.net/datatables.net"
         },
         {
-            "name": "datatables.net/datatables.net-bs5",
-            "version": "dev-master",
-            "version_normalized": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/DataTables/Dist-DataTables-Bootstrap5.git",
-                "reference": "72fb44004a0b7c32e369c7f77eca19fe30c337d9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/DataTables/Dist-DataTables-Bootstrap5/zipball/72fb44004a0b7c32e369c7f77eca19fe30c337d9",
-                "reference": "72fb44004a0b7c32e369c7f77eca19fe30c337d9",
-                "shasum": ""
-            },
-            "require": {
-                "datatables.net/datatables.net": ">=1.11.5",
-                "twbs/bootstrap": "5.*"
-            },
-            "time": "2022-03-31T11:00:00+00:00",
-            "default-branch": true,
-            "type": "library",
-            "installation-source": "dist",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "SpryMedia",
-                    "homepage": "https://datatables.net"
-                }
-            ],
-            "description": "DataTables is a plug-in for the jQuery Javascript library. It is a highly flexible tool, based upon the foundations of progressive enhancement, which will add advanced interaction controls to any HTML table. This is DataTables with styling for [Bootstrap5](https://getbootstrap.com/)",
-            "homepage": "http://www.datatables.net/",
-            "keywords": [
-                "bootstrap",
-                "bootstrap5",
-                "datatables",
-                "jquery",
-                "table"
-            ],
-            "support": {
-                "forum": "https://datatables.net/forums",
-                "issues": "https://github.com/DataTables/Dist-DataTables-Bootstrap5/issues",
-                "source": "https://github.com/DataTables/Dist-DataTables-Bootstrap5"
-            },
-            "install-path": "../datatables.net/datatables.net-bs5"
-        },
-        {
             "name": "select2/select2",
             "version": "4.0.13",
             "version_normalized": "4.0.13.0",

@@ -49,7 +49,7 @@ Thumbs.db
 *.wmv
 
 # composer
-vendor\components
-vendor\datatables.net
-vendor\select2
-vendor\twbs
+vendor/components/
+vendor/datatables.net/
+vendor/select2/
+vendor/twbs/
