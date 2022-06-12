@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "62fa35596107326d6bf22a3839eeb20c",
+    "content-hash": "e3309ee2a143b5691ffceb00aabdf859",
     "packages": [
         {
             "name": "components/jquery",
@@ -54,48 +54,6 @@
                 "wiki": "http://docs.jquery.com/"
             },
             "time": "2021-03-20T19:13:42+00:00"
-        },
-        {
-            "name": "datatables.net/datatables.net",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/DataTables/Dist-DataTables.git",
-                "reference": "85c049199a0832d750c188477b3ad9adca688fa5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/DataTables/Dist-DataTables/zipball/85c049199a0832d750c188477b3ad9adca688fa5",
-                "reference": "85c049199a0832d750c188477b3ad9adca688fa5",
-                "shasum": ""
-            },
-            "require": {
-                "components/jquery": ">=1.7"
-            },
-            "default-branch": true,
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "SpryMedia",
-                    "homepage": "https://datatables.net"
-                }
-            ],
-            "description": "DataTables is a plug-in for the jQuery Javascript library. It is a highly flexible tool, based upon the foundations of progressive enhancement, which will add advanced interaction controls to any HTML table. This is jQuery DataTables",
-            "homepage": "http://www.datatables.net/",
-            "keywords": [
-                "datatables",
-                "jquery",
-                "table"
-            ],
-            "support": {
-                "forum": "https://datatables.net/forums",
-                "source": "https://github.com/DataTables/Dist-DataTables"
-            },
-            "time": "2022-06-07T15:26:38+00:00"
         },
         {
             "name": "select2/select2",
@@ -193,9 +151,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "datatables.net/datatables.net": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
