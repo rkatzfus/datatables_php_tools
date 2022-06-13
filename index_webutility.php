@@ -8,14 +8,14 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="/vendor/twbs/bootstrap/dist/css/bootstrap.min.css"/>    
 		<link rel="stylesheet" type="text/css" href="/vendor/datatables.net/datatables.net-bs5/css/dataTables.bootstrap5.min.css"/>
-		<!-- <link rel="stylesheet" type="text/css" href="/vendor/datatableswebutility/dwuty/vendor/select2/select2/dist/css/select2.min.css"/> -->
+		<link rel="stylesheet" type="text/css" href="/vendor/select2/select2/dist/css/select2.min.css"/>
 	
 		<script type="text/javascript" src="/vendor/components/jquery/jquery.min.js"></script>
 		<script type="text/javascript" src="/vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 		<script type="text/javascript" src="/vendor/datatables.net/datatables.net/js/jquery.dataTables.min.js"></script>
 		<script type="text/javascript" src="/vendor/datatables.net/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
-		<!-- <script type="text/javascript" src="/vendor/datatableswebutility/dwuty/vendor/select2/select2/dist/js/select2.min.js"></script>
-		<script type="text/javascript" src="/vendor/datatableswebutility/dwuty/vendor/select2/select2/dist/js/i18n/de.js"></script> -->
+		<script type="text/javascript" src="/vendor/select2/select2/dist/js/select2.min.js"></script>
+		<script type="text/javascript" src="/vendor/select2/select2/dist/js/i18n/de.js"></script>
 	</head>
 	<body>
 		<div class="container-fluid">

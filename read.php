@@ -2,7 +2,6 @@
 require_once __DIR__ . '/vendor/autoload.php';
 use App\webutility_ssp;
 
-
 $pkfield = $_POST['pkfield'];
 $obj_ssp = new webutility_ssp($debug = false);
 $arySearchColumn = array();
@@ -24,8 +23,8 @@ foreach ($_POST['columns'] as $key => $value) {
         }
     }
 }
-$strSqlFrom = $_POST['datasource']; 
-$ary_Columnsdata = json_decode($_POST['columnsdata'], true);
+$strSqlFrom = json_decode($_POST['datasource'],true); 
+$ary_Columnsdata = $_POST['columnsdata'];
 // generate select2 search data
 foreach ($ary_Columnsdata as $select_value) {
     if (array_key_exists('SELECT2', $select_value)) {
@@ -104,7 +103,7 @@ $obj_ssp->set_order($_POST['order'], $_POST['columns'], '');
 $obj_ssp->set_Columns($aryColumns);
 $obj_ssp->set_Select($aryColumns);
 $obj_ssp->set_From($strSqlFrom);
-$obj_ssp->set_Where($_POST['where']);
+$obj_ssp->set_Where(json_decode($_POST['where'],true));
 $obj_ssp->set_Search($strSqlSearch);
 $obj_ssp->set_SearchColumn($strSqlSearchColumn);
 $obj_ssp->set_start($_POST['start']);

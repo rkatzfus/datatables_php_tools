@@ -129,7 +129,7 @@ class webutility_ssp
             $this->strsqlSelect = $this->strsqlSelectStart . ", " . implode(",", $this->ary_sqlSelectInline);
         } elseif (!empty($ary_Select)) {
             foreach ($ary_Select as $Select_key => $Select_value) {
-                $this->ary_sqlSelectInline[] = $Select_value . " as [" . $Select_key . "]";
+                $this->ary_sqlSelectInline[] = $Select_value . " as " . $Select_key ;
             }
             $this->strsqlSelect =  $this->strsqlSelectStart . implode(",", $this->ary_sqlSelectInline);
         } else { 
