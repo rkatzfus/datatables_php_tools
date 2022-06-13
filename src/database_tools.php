@@ -48,5 +48,17 @@ class database_tools
             return $result;
         }
     }
+    public function sql2array_pk_value(
+        $sql = ""
+        , $pk = ""
+        , $value = ""
+    ) {
+        if ($this->mysqli_conn != false && isset($sql) && $sql != "") {
+            foreach ($this->mysqli_conn -> query($sql) -> fetch_all(MYSQLI_ASSOC) as $value_key) {
+                $result[$value_key[$pk]] = $value_key[$value];
+            }
+            return $result;
+        }
+    }
 }
 ?>

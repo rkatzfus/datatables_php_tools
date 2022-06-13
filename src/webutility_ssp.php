@@ -116,7 +116,7 @@ class webutility_ssp
     public function set_Select(
         $ary_Select = array()
     ) { 
-        $this->strsqlSelectStart = "SELECT DISTINCT ";
+        $this->strsqlSelectStart = "select distinct ";
         $this->ary_sqlSelectInline = array();
         if (array_search('DT_RowId', array_column($ary_Select, 'dt')) !== false) {
             foreach ($ary_Select as $Select_value) {

@@ -400,6 +400,8 @@ class webutility
         $dtconfig=isset($arySetting["DT_CONFIG"])?$arySetting["DT_CONFIG"]:"";
         $required=isset($arySetting["REQUIRED"])?$arySetting["REQUIRED"]:"";
         $default=isset($arySetting["DEFAULT"])?$arySetting["DEFAULT"]:"";
+        $encryption=isset($arySetting["ENCRYPTION"])?$arySetting["ENCRYPTION"]:false;
+        
         $this->columns[] = array( //default4all
             "SQLNAME" => $SqlName
             , "NAME" => $Name
@@ -411,6 +413,7 @@ class webutility
             , "DT_CONFIG" => $dtconfig
             , "REQUIRED" => $required
             , "DEFAULT" => $default
+            , "ENCRYPTION" => $encryption
         );
         foreach ($this->columns as $column_key => $column_value) {
             if ($this->columns[$column_key]["NAME"] == $Name && !empty($arySetting)) {
@@ -429,6 +432,7 @@ class webutility
                              $this->obj_ssp->set_From($arySetting['SELECT2']['from']);
                             (isset($arySetting['SELECT2']['where'])) ?  $this->obj_ssp->set_Where($arySetting['SELECT2']['where']) :  $this->obj_ssp->set_Where();
                             $sql =  $this->obj_ssp->set_data_sql();
+                            echo $sql;
                             $ary_Select2Initial = $this->obj_mysqli->sql2array_pk($sql, 'id');
                             // $ary_Select2Initial = $this->obj_mysqli->exec_sql_pk_value($sql, 'id', 'text');
                             $this->columns[$column_key]['JSON'] =  $ary_Select2Initial;
@@ -475,6 +479,44 @@ class webutility
         } else {
             return "no matching data delivered";
         }
+    }
+    public function encrypt(
+        $data = "",
+        $password = ""
+    ) {
+        $iv = substr(sha1(mt_rand()), 0, 16);
+        $password = sha1($password);
+        $salt = sha1(mt_rand());
+        $saltWithPassword = hash('sha256', $password . $salt);
+        $encrypted = openssl_encrypt(
+          $data,
+          "aes-256-cbc",
+          $saltWithPassword,
+          0,
+          $iv
+        );
+        $msg_encrypted_bundle = "$iv:$salt:$encrypted";
+        return $msg_encrypted_bundle;
+    }
+    public function decrypt(
+        $msg_encrypted_bundle = "",
+        $password = ""
+    ) {
+        $password = sha1($password);
+        $components = explode(':', $msg_encrypted_bundle);
+        $iv            = $components[0];
+        $salt          = hash("sha256", $password . $components[1]);
+        $encrypted_msg = $components[2];
+        $decrypted_msg = openssl_decrypt(
+            $encrypted_msg,
+            "aes-256-cbc",
+            $salt,
+            0,
+            $iv
+        );
+        if ($decrypted_msg === false)
+            return false;
+        return $decrypted_msg;
     }
 }
 ?>

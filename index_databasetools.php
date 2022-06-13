@@ -33,6 +33,16 @@
             echo "<b>sql_getfield</b>";
             var_dump($obj_mysqli->sql_getfield($sql));
             echo "<hr>";
+            $sql = "
+                select
+                    ID
+                    , TEXT
+                from 
+                    MYSQL_DATABASE.dropdown_table; 
+            ";
+            echo "<b>sql2array_pk_value</b>";
+            var_dump($obj_mysqli->sql2array_pk_value($sql,"ID","TEXT"));
+            echo "<hr>";
         ?>
     </body>
 </html>
