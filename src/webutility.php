@@ -10,6 +10,7 @@ define('DROPDOWN_FIELD', '2');
 define('LINK', '3');
 define('LINK_BUTTON', '4');
 define('DATE_FIELD', '5');
+define('DATETIME_FIELD', '6');
 
 
 
@@ -17,7 +18,6 @@ define('DATE_FIELD', '5');
 
 
 
-// DEFINE('DT_EDIT_LINK_BUTTON_v2', '5');
 // DEFINE('DT_EDIT_DATE_TIME_v2', '7');
 // DEFINE('DT_EDIT_DROPDOWN_MULTI_v2', '8');
 // DEFINE('DT_EDIT_PERCENT_v2', '9');
@@ -334,6 +334,9 @@ class webutility
                                                 case 5: // DATE_FIELD
                                                     $classname[] = "text-center";
                                                     break;
+                                                case 6: // DATETIME_FIELD
+                                                    $classname[] = "text-center";
+                                                    break;
                                                 default:
                                                     // code
                                                     break;
@@ -423,6 +426,16 @@ class webutility
                                                     ?> render: function(data) {
                                                         if (data !== null) {
                                                             return "<input type='date' class='form-control' style='text-align: right' value='" + data + "'>";
+                                                        } else {
+                                                            return "";
+                                                        }
+                                                        }
+                                                    <?php
+                                                    break; 
+                                                case 6: // DATETIME_FIELD
+                                                    ?> render: function(data) {
+                                                        if (data !== null) {
+                                                            return "<input type='datetime-local' class='form-control' style='text-align: right' value='" + data.replace(" ","T") + "' step='1'>";
                                                         } else {
                                                             return "";
                                                         }

@@ -16,6 +16,7 @@
 		<script type="text/javascript" src="/vendor/datatables.net/datatables.net/js/jquery.dataTables.min.js"></script>
 		<script type="text/javascript" src="/vendor/datatables.net/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
 		<script type="text/javascript" src="/vendor/datatables.net/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+		<script type="text/javascript" src="/vendor/datatables.net/datatables.net-fixedheader-bs5/js/fixedHeader.bootstrap5.min.js"></script>
 		<script type="text/javascript" src="/vendor/select2/select2/dist/js/select2.min.js"></script>
 		<script type="text/javascript" src="/vendor/select2/select2/dist/js/i18n/de.js"></script>
 	</head>
@@ -51,6 +52,7 @@
 				$obj_webutility->new_column("root.LINK", "LINK", "column: LINK", VIEW, LINK);
 				$obj_webutility->new_column("root.LINK_BUTTON", "LINK_BUTTON", "column: LINK_BUTTON", VIEW, LINK_BUTTON);
 				$obj_webutility->new_column("root.DATE_FIELD", "DATE_FIELD", "column: DATE_FIELD", VIEW, DATE_FIELD);
+				$obj_webutility->new_column("root.DATETIME_FIELD", "DATETIME_FIELD", "column: DATETIME_FIELD", VIEW, DATETIME_FIELD);
 				$defOrderby_xxxTESTxxx = 0;
 				$obj_webutility->table_header();
 			?>
@@ -59,7 +61,7 @@
 			$obj_webutility->config(
 				$defOrderby_xxxTESTxxx,
 				"asc"
-				, fixedHeader: true
+				, "fixedHeader: true"
 			);
 		?>
 	</body>
