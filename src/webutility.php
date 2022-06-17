@@ -9,6 +9,7 @@ define('CHECKBOX', '1');
 define('DROPDOWN_FIELD', '2');
 define('LINK', '3');
 define('LINK_BUTTON', '4');
+define('DATE_FIELD', '5');
 
 
 
@@ -17,7 +18,6 @@ define('LINK_BUTTON', '4');
 
 
 // DEFINE('DT_EDIT_LINK_BUTTON_v2', '5');
-// DEFINE('DT_EDIT_DATE_v2', '6');
 // DEFINE('DT_EDIT_DATE_TIME_v2', '7');
 // DEFINE('DT_EDIT_DROPDOWN_MULTI_v2', '8');
 // DEFINE('DT_EDIT_PERCENT_v2', '9');
@@ -331,6 +331,9 @@ class webutility
                                                 case 4: // LINK_BUTTON
                                                     $classname[] = "text-center";
                                                     break;
+                                                case 5: // DATE_FIELD
+                                                    $classname[] = "text-center";
+                                                    break;
                                                 default:
                                                     // code
                                                     break;
@@ -410,6 +413,16 @@ class webutility
                                                     ?> render: function(data) {
                                                         if (data !== null) {
                                                             return "<a class='btn btn-outline-primary form-control' href='" + data + "' title='" + data + "' target='_blank' rel='noopener' role='button'>Link</a>";
+                                                        } else {
+                                                            return "";
+                                                        }
+                                                        }
+                                                    <?php
+                                                    break; 
+                                                case 5: // DATE_FIELD
+                                                    ?> render: function(data) {
+                                                        if (data !== null) {
+                                                            return "<input type='date' class='form-control' style='text-align: right' value='" + data + "'>";
                                                         } else {
                                                             return "";
                                                         }

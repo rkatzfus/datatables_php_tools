@@ -48,6 +48,7 @@
 				$obj_webutility->new_column("root.REF_DROPDOWN", "DROPDOWN_FIELD", "column: DROPDOWN_FIELD", VIEW, DROPDOWN_FIELD, $arySetting_DROPDOWN_FIELD);
 				$obj_webutility->new_column("root.LINK", "LINK", "column: LINK", VIEW, LINK);
 				$obj_webutility->new_column("root.LINK_BUTTON", "LINK_BUTTON", "column: LINK_BUTTON", VIEW, LINK_BUTTON);
+				$obj_webutility->new_column("root.DATE_FIELD", "DATE_FIELD", "column: DATE_FIELD", VIEW, DATE_FIELD);
 				$defOrderby_xxxTESTxxx = 0;
 				$obj_webutility->table_header();
 			?>
