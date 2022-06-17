@@ -8,13 +8,14 @@ define('TEXT_FIELD', '0');
 define('CHECKBOX', '1');
 define('DROPDOWN_FIELD', '2');
 define('LINK', '3');
+define('LINK_BUTTON', '4');
 
 
 
 // DEFINE('DT_EDIT_STATE_v2', '3');
 
 
-// DEFINE('DT_EDIT_LINK_v2', '4');
+
 // DEFINE('DT_EDIT_LINK_BUTTON_v2', '5');
 // DEFINE('DT_EDIT_DATE_v2', '6');
 // DEFINE('DT_EDIT_DATE_TIME_v2', '7');
@@ -313,7 +314,7 @@ class webutility
                                 stateSave: true,
                                 processing: true,
                                 cache: false,
-                                searchDelay: 400, 
+                                searchDelay: 1000, 
                                 serverSide: true,
                                 columnDefs: [
                                     <?php
@@ -327,7 +328,7 @@ class webutility
                                                 case 2: // DROPDOWN_FIELD
                                                     $classname[] = "text-center";
                                                     break;
-                                                case 3: // LINK
+                                                case 4: // LINK_BUTTON
                                                     $classname[] = "text-center";
                                                     break;
                                                 default:
@@ -398,7 +399,17 @@ class webutility
                                                 case 3: // LINK
                                                     ?> render: function(data) {
                                                         if (data !== null) {
-                                                            return "<a href='" + data + "' title='" + data + "' target='_blank' rel='noopener'>Öffnen</a>";
+                                                            return "<a href='" + data + "' title='" + data + "' target='_blank' rel='noopener'>" + data + "</a>";
+                                                        } else {
+                                                            return "";
+                                                        }
+                                                        }
+                                                    <?php
+                                                    break; 
+                                                case 4: // LINK_BUTTON
+                                                    ?> render: function(data) {
+                                                        if (data !== null) {
+                                                            return "<a class='btn btn-outline-primary form-control' href='#' title='" + data + "' target='_blank' rel='noopener' role='button'>Link</a>";
                                                         } else {
                                                             return "";
                                                         }
