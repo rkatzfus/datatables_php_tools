@@ -112,8 +112,8 @@ class webutility
     }
     public function config(
         $default_order = "",
-        $default_order_dir = "asc"
-
+        $default_order_dir = "asc",
+        $additional_options = ""
     ) {
         $ary_SearchSelect2 = array();
         foreach ($this->columns as $column) {
@@ -499,7 +499,7 @@ class webutility
                                         }
                                         ?>
                                     },
-
+                                <?= $additional_options; ?>
                             });
                         }
                         fetch_data_<?= $this->tbl_ID; ?>();

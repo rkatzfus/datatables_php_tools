@@ -57,6 +57,7 @@
 			$obj_webutility->config(
 				$defOrderby_xxxTESTxxx,
 				"asc"
+				, fixedHeader: true
 			);
 		?>
 	</body>
