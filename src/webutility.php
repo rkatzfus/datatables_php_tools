@@ -7,6 +7,27 @@ define("EDIT", "2");
 define('TEXT_FIELD', '0');
 define('CHECKBOX', '1');
 define('DROPDOWN_FIELD', '2');
+define('LINK', '3');
+
+
+
+// DEFINE('DT_EDIT_STATE_v2', '3');
+
+
+// DEFINE('DT_EDIT_LINK_v2', '4');
+// DEFINE('DT_EDIT_LINK_BUTTON_v2', '5');
+// DEFINE('DT_EDIT_DATE_v2', '6');
+// DEFINE('DT_EDIT_DATE_TIME_v2', '7');
+// DEFINE('DT_EDIT_DROPDOWN_MULTI_v2', '8');
+// DEFINE('DT_EDIT_PERCENT_v2', '9');
+// DEFINE('DT_EDIT_CURRENCY_v2', '10');
+// DEFINE('DT_EDIT_MODAL_BUTTON_v2', '11');
+// DEFINE('DT_EDIT_NUMBER_v2', '12');
+// DEFINE('DT_EDIT_COLOR_v2', '13'); // sql server nvarchar(8) -- untested
+// DEFINE('DT_EDIT_FILE_v2', '14');
+
+
+
 class webutility
 {
     private $columns = array();
@@ -292,7 +313,7 @@ class webutility
                                 stateSave: true,
                                 processing: true,
                                 cache: false,
-                                searchDelay: 1000, // default null = 400ms
+                                searchDelay: 400, 
                                 serverSide: true,
                                 columnDefs: [
                                     <?php
@@ -301,6 +322,12 @@ class webutility
                                             ($columns_value['ACTION'] == 2 && isset($this->ajax_update_url))?$classname[] = "contenteditable":"";
                                             switch ($columns_value["TYP"]) {
                                                 case 1: // CHECKBOX
+                                                    $classname[] = "text-center";
+                                                    break;
+                                                case 2: // DROPDOWN_FIELD
+                                                    $classname[] = "text-center";
+                                                    break;
+                                                case 3: // LINK
                                                     $classname[] = "text-center";
                                                     break;
                                                 default:
@@ -313,6 +340,7 @@ class webutility
                                                 , ($columns_value["SEARCHABLE"] == 1)?"searchable: true":"searchable: false"
                                                 , (isset($classname))?"className: '".implode(" ",$classname)."'":""
                                             ); 
+                                            unset($classname);
                                         }
                                         foreach ($aryColumndef as $row) {
                                             echo "{".implode(", ", $row)."},";
@@ -322,6 +350,7 @@ class webutility
                                 ajax: {
                                     url: "<?= $this->ajax_fetch_url; ?>",
                                     type: "POST",
+                                    dataType: "json",
                                     data: {
                                         pkfield: <?= $this->post_encode($this->pkfield); ?>,
                                         datasource: <?= $this->post_encode($this->ajax_fetch_datasource); ?>,
@@ -366,6 +395,16 @@ class webutility
                                                         },
                                                     <?php
                                                         break;
+                                                case 3: // LINK
+                                                    ?> render: function(data) {
+                                                        if (data !== null) {
+                                                            return "<a href='" + data + "' title='" + data + "' target='_blank' rel='noopener'>Öffnen</a>";
+                                                        } else {
+                                                            return "";
+                                                        }
+                                                        }
+                                                    <?php
+                                                    break; 
                                                 default:
                                                     # code...
                                                     break;
@@ -414,6 +453,8 @@ class webutility
                                                             type: "POST",
                                                             delay: 100,
                                                             dataType: 'json',
+                                                            theme: 'bootstrap-5',
+                                                            cache: false,
                                                             data: function(params) {
                                                                 query = {
                                                                     search: params.term,
@@ -427,7 +468,6 @@ class webutility
                                                                     results: response
                                                                 };
                                                             },
-                                                            cache: false,
                                                         },
                                                     });
                                                 <?php
@@ -485,7 +525,7 @@ class webutility
                     break;
                 case 'SELECT2': // // setting 4 select2 dropdown
                     switch ($Typ) {
-                        case 2: // DT_EDIT_DROPDOWN_v2
+                        case 2: // DROPDOWN_FIELD
                             $aryColumns = $arySetting['SELECT2']['columns'];
                              $this->obj_ssp->set_length(-1); // remove length & paging
                              $this->obj_ssp->set_Select($aryColumns);
