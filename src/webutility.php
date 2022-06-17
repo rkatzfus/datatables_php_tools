@@ -91,7 +91,14 @@ class webutility
     public function config(
         $default_order = "",
         $default_order_dir = "asc"
+
     ) {
+        $ary_SearchSelect2 = array();
+        foreach ($this->columns as $column) {
+            if ($column['TYP'] == 2 or $column['TYP'] == 8) {
+                $ary_SearchSelect2[$column['SQLNAME']] = $column['JSON'];
+            }
+        }
         foreach ($this->columns as $columns_key => $columns_value) {
             if ($columns_value["TYP"] != 11) { // MODAL_BUTTON
                 if ($columns_value["TYP"] == 8) { // DROPDOWN_MULTI_FIELD
@@ -345,16 +352,17 @@ class webutility
                                                     break;  
                                                 case 2: // DROPDOWN_FIELD
                                                     ?> render: function(data) {
-                                                        $select = $('<select class="DT_S2_<?= $column['NAME']; ?>"></select>', {})
+                                                        aryJson = <?=$this->post_encode($column['JSON']) ;?>;
+                                                        select = $('<select class="SELECT2_<?= $column['NAME']; ?>"></select>', {})
                                                         if (data != 0 && data != null) {
-                                                            $option = $("<option>" + $<?= $column['NAME']; ?>[data] + "</option>", {});
-                                                            $option.attr("selected", "selected")
-                                                            $select.append($option);
-                                                            $option.attr("value", data);
-                                                            $select.append($option);
-                                                            $select.attr("data-search", $<?= $column['NAME']; ?>[data]);
+                                                            option = $("<option>" + aryJson[data]  + "</option>");
+                                                            option.attr("selected", "selected")
+                                                            select.append(option);
+                                                            option.attr("value", data);
+                                                            select.append(option);
+                                                            select.attr("data-search",data);
                                                         }
-                                                        return $select.prop("outerHTML");
+                                                        return select.prop("outerHTML");
                                                         },
                                                     <?php
                                                         break;
@@ -376,6 +384,58 @@ class webutility
                                     }
                                     ?>
                                 ],
+                                drawCallback: 
+                                    function() {
+                                        <?php
+                                            foreach ($this->columns as $column) {
+                                                if ($column["TYP"] == 2 || $column["TYP"] == 8) {
+                                                switch ($column["TYP"]) {
+                                                    case 2: // DT_EDIT_DROPDOWN_v2
+                                                        $select2data = json_encode($column["SELECT2"], JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE);
+                                                        break;
+                                                    case 8: // DT_EDIT_DROPDOWN_MULTI_v2
+                                                        $select2data = json_encode($column["SUBSELECT2"], JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE);
+                                                        break;
+                                                    default:
+                                                        # code...
+                                                        break;
+                                                }
+                                                ?>
+                                                    $(".SELECT2_<?= $column["NAME"];?>").select2({
+                                                        disabled: false,
+                                                        // disabled: <?#= (!isset($this->ajax_update_url))?"true":"false"; ?>,
+                                                        width: "100%",
+                                                        language: "de",
+                                                        placeholder: "Auswahl",
+                                                        dropdownAutoWidth: true,
+                                                        allowClear: true,
+                                                        ajax: {
+                                                            url: "<?= $column["AJAX"]; ?>",
+                                                            type: "POST",
+                                                            delay: 100,
+                                                            dataType: 'json',
+                                                            data: function(params) {
+                                                                query = {
+                                                                    search: params.term,
+                                                                    type: "public",
+                                                                    select2: <?= $this->post_encode($select2data); ?>,
+                                                                }
+                                                                return query;
+                                                            },
+                                                            processResults: function(response) {
+                                                                return {
+                                                                    results: response
+                                                                };
+                                                            },
+                                                            cache: false,
+                                                        },
+                                                    });
+                                                <?php
+                                            }
+                                        }
+                                        ?>
+                                    },
+
                             });
                         }
                         fetch_data_<?= $this->tbl_ID; ?>();
@@ -432,9 +492,7 @@ class webutility
                              $this->obj_ssp->set_From($arySetting['SELECT2']['from']);
                             (isset($arySetting['SELECT2']['where'])) ?  $this->obj_ssp->set_Where($arySetting['SELECT2']['where']) :  $this->obj_ssp->set_Where();
                             $sql =  $this->obj_ssp->set_data_sql();
-                            echo $sql;
-                            $ary_Select2Initial = $this->obj_mysqli->sql2array_pk($sql, 'id');
-                            // $ary_Select2Initial = $this->obj_mysqli->exec_sql_pk_value($sql, 'id', 'text');
+                            $ary_Select2Initial = $this->obj_mysqli->sql2array_pk_value($sql, 'id', 'text');
                             $this->columns[$column_key]['JSON'] =  $ary_Select2Initial;
                             break;
                         case 8: // DT_EDIT_DROPDOWN_MULTI_v2
