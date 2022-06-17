@@ -409,7 +409,7 @@ class webutility
                                                 case 4: // LINK_BUTTON
                                                     ?> render: function(data) {
                                                         if (data !== null) {
-                                                            return "<a class='btn btn-outline-primary form-control' href='#' title='" + data + "' target='_blank' rel='noopener' role='button'>Link</a>";
+                                                            return "<a class='btn btn-outline-primary form-control' href='" + data + "' title='" + data + "' target='_blank' rel='noopener' role='button'>Link</a>";
                                                         } else {
                                                             return "";
                                                         }
