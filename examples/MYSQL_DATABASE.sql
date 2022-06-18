@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Erstellungszeit: 17. Jun 2022 um 20:25
+-- Erstellungszeit: 18. Jun 2022 um 08:22
 -- Server-Version: 8.0.28
 -- PHP-Version: 8.0.15
 
@@ -57,46 +57,48 @@ INSERT INTO `dropdown_table` (`ID`, `DEL`, `TEXT`) VALUES
 CREATE TABLE `root_table` (
   `ID` mediumint NOT NULL,
   `DEL` bit(1) NOT NULL DEFAULT b'0',
-  `TEXT_FIELD` char(30) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `TEXT` char(30) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `CHECKBOX` bit(1) NOT NULL DEFAULT b'0',
   `REF_DROPDOWN` mediumint DEFAULT NULL,
   `LINK` varchar(2083) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `LINK_BUTTON` varchar(2083) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `DATE_FIELD` date DEFAULT NULL,
-  `DATETIME_FIELD` datetime DEFAULT NULL
+  `DATE` date DEFAULT NULL,
+  `DATETIME` datetime DEFAULT NULL,
+  `COLOR` varchar(7) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `EMAIL` varchar(70) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
 -- Daten für Tabelle `root_table`
 --
 
-INSERT INTO `root_table` (`ID`, `DEL`, `TEXT_FIELD`, `CHECKBOX`, `REF_DROPDOWN`, `LINK`, `LINK_BUTTON`, `DATE_FIELD`, `DATETIME_FIELD`) VALUES
-(1, b'0', 'ALPHA', b'0', 1, 'https://stackoverflow.com/questions/219569/best-database-field-type-for-a-url', 'https://stackoverflow.com/questions/219569/best-database-field-type-for-a-url', '2022-06-17', '2022-06-17 00:00:00'),
-(2, b'0', 'BRAVO', b'0', 2, 'https://packagist.org/packages/datatableswebutility/dwuty', 'https://packagist.org/packages/datatableswebutility/dwuty', '2022-06-23', '2022-06-23 12:57:36'),
-(3, b'0', 'CHARLIE', b'0', 3, 'http://datatableswebutility.com/', 'http://datatableswebutility.com/', '2022-06-29', '2022-06-30 01:55:12'),
-(4, b'0', 'DELTA', b'0', 4, 'http://datatableswebutility.de', 'http://datatableswebutility.de', '2022-07-05', '2022-07-06 14:52:48'),
-(5, b'0', 'ECHO', b'1', 5, 'http://datatableswebutility.net', 'http://datatableswebutility.net', '2022-07-11', '2022-07-13 03:50:24'),
-(6, b'0', 'FOXTROT', b'0', 6, 'http://dwuty.com', 'http://dwuty.com', '2022-07-17', '2022-07-19 16:48:00'),
-(7, b'0', 'GOLF', b'0', 7, 'http://dwuty.de', 'http://dwuty.de', '2022-07-23', '2022-07-26 05:45:36'),
-(8, b'0', 'HOTEL', b'0', 8, 'http://dwuty.net', 'http://dwuty.net', '2022-07-29', '2022-08-01 18:43:12'),
-(9, b'0', 'INDIA', b'0', 9, NULL, NULL, '2022-08-04', '2022-08-08 07:40:48'),
-(10, b'0', 'JULIETT', b'1', 8, NULL, NULL, '2022-08-10', '2022-08-14 20:38:24'),
-(11, b'0', 'KILO', b'1', 7, NULL, NULL, '2022-08-16', '2022-08-21 09:36:00'),
-(12, b'0', 'LIMA', b'0', 6, NULL, NULL, '2022-08-22', '2022-08-27 22:33:36'),
-(13, b'0', 'MIKE', b'1', 5, NULL, NULL, '2022-08-28', '2022-09-03 11:31:12'),
-(14, b'0', 'NOVEMBER', b'0', 4, NULL, NULL, '2022-09-03', '2022-09-10 00:28:48'),
-(15, b'0', 'OSCAR', b'0', 3, NULL, NULL, '2022-09-09', '2022-09-16 13:26:24'),
-(16, b'0', 'PAPA', b'0', 2, NULL, NULL, '2022-09-15', '2022-09-23 02:24:00'),
-(17, b'0', 'QUEBEC', b'0', 1, NULL, NULL, '2022-09-23', '2022-09-29 15:21:36'),
-(18, b'0', 'ROMEO', b'0', NULL, NULL, NULL, NULL, NULL),
-(19, b'0', 'SIERRA', b'0', NULL, NULL, NULL, NULL, NULL),
-(20, b'0', 'TANGO', b'0', NULL, NULL, NULL, NULL, NULL),
-(21, b'0', 'UNIFORM', b'0', NULL, NULL, NULL, NULL, NULL),
-(22, b'0', 'VICTOR', b'0', NULL, NULL, NULL, NULL, NULL),
-(23, b'0', 'WHISKEY', b'0', NULL, NULL, NULL, NULL, NULL),
-(24, b'0', 'XRAY', b'0', NULL, NULL, NULL, NULL, NULL),
-(25, b'0', 'YANKEE', b'0', NULL, NULL, NULL, NULL, NULL),
-(26, b'0', 'ZULU', b'0', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `root_table` (`ID`, `DEL`, `TEXT`, `CHECKBOX`, `REF_DROPDOWN`, `LINK`, `LINK_BUTTON`, `DATE`, `DATETIME`, `COLOR`, `EMAIL`) VALUES
+(1, b'0', 'ALPHA', b'0', 1, 'https://stackoverflow.com/questions/219569/best-database-field-type-for-a-url', 'https://stackoverflow.com/questions/219569/best-database-field-type-for-a-url', '2022-06-17', '2022-06-17 00:00:00', '#ff0000', 'info@dwuty.de '),
+(2, b'0', 'BRAVO', b'0', 2, 'https://packagist.org/packages/datatableswebutility/dwuty', 'https://packagist.org/packages/datatableswebutility/dwuty', '2022-06-23', '2022-06-23 12:57:36', '#00ff1e', 'abuse@dwuty.de'),
+(3, b'0', 'CHARLIE', b'0', 3, 'http://datatableswebutility.com/', 'http://datatableswebutility.com/', '2022-06-29', '2022-06-30 01:55:12', '#4f6392', 'postmaster@dwuty.de'),
+(4, b'0', 'DELTA', b'0', 4, 'http://datatableswebutility.de', 'http://datatableswebutility.de', '2022-07-05', '2022-07-06 14:52:48', NULL, 'security@dwuty.de'),
+(5, b'0', 'ECHO', b'1', 5, 'http://datatableswebutility.net', 'http://datatableswebutility.net', '2022-07-11', '2022-07-13 03:50:24', NULL, 'info@datatableswebutility.de'),
+(6, b'0', 'FOXTROT', b'0', 6, 'http://dwuty.com', 'http://dwuty.com', '2022-07-17', '2022-07-19 16:48:00', NULL, 'abuse@datatableswebutility.de'),
+(7, b'0', 'GOLF', b'0', 7, 'http://dwuty.de', 'http://dwuty.de', '2022-07-23', '2022-07-26 05:45:36', NULL, 'postmaster@datatableswebutility.de'),
+(8, b'0', 'HOTEL', b'0', 8, 'http://dwuty.net', 'http://dwuty.net', '2022-07-29', '2022-08-01 18:43:12', NULL, 'security@datatableswebutility.de'),
+(9, b'0', 'INDIA', b'0', 9, NULL, NULL, '2022-08-04', '2022-08-08 07:40:48', NULL, NULL),
+(10, b'0', 'JULIETT', b'1', 8, NULL, NULL, '2022-08-10', '2022-08-14 20:38:24', NULL, NULL),
+(11, b'0', 'KILO', b'1', 7, NULL, NULL, '2022-08-16', '2022-08-21 09:36:00', NULL, NULL),
+(12, b'0', 'LIMA', b'0', 6, NULL, NULL, '2022-08-22', '2022-08-27 22:33:36', NULL, NULL),
+(13, b'0', 'MIKE', b'1', 5, NULL, NULL, '2022-08-28', '2022-09-03 11:31:12', NULL, NULL),
+(14, b'0', 'NOVEMBER', b'0', 4, NULL, NULL, '2022-09-03', '2022-09-10 00:28:48', NULL, NULL),
+(15, b'0', 'OSCAR', b'0', 3, NULL, NULL, '2022-09-09', '2022-09-16 13:26:24', NULL, NULL),
+(16, b'0', 'PAPA', b'0', 2, NULL, NULL, '2022-09-15', '2022-09-23 02:24:00', NULL, NULL),
+(17, b'0', 'QUEBEC', b'0', 1, NULL, NULL, '2022-09-23', '2022-09-29 15:21:36', NULL, NULL),
+(18, b'0', 'ROMEO', b'0', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(19, b'0', 'SIERRA', b'0', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(20, b'0', 'TANGO', b'0', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(21, b'0', 'UNIFORM', b'0', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(22, b'0', 'VICTOR', b'0', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(23, b'0', 'WHISKEY', b'0', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(24, b'0', 'XRAY', b'0', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(25, b'0', 'YANKEE', b'0', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(26, b'0', 'ZULU', b'0', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 --
 -- Indizes der exportierten Tabellen

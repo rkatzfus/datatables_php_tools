@@ -4,13 +4,15 @@ define("UNSELECT", "0");
 define("VIEW", "1");
 define("EDIT", "2");
 //------------------
-define('TEXT_FIELD', '0');
+define('TEXT', '0');
 define('CHECKBOX', '1');
-define('DROPDOWN_FIELD', '2');
+define('DROPDOWN', '2');
 define('LINK', '3');
 define('LINK_BUTTON', '4');
-define('DATE_FIELD', '5');
-define('DATETIME_FIELD', '6');
+define('DATE', '5');
+define('DATETIME', '6');
+define('COLOR', '7');
+define('EMAIL', '9');
 
 
 
@@ -325,16 +327,19 @@ class webutility
                                                 case 1: // CHECKBOX
                                                     $classname[] = "text-center";
                                                     break;
-                                                case 2: // DROPDOWN_FIELD
+                                                case 2: // DROPDOWN
                                                     $classname[] = "text-center";
                                                     break;
                                                 case 4: // LINK_BUTTON
                                                     $classname[] = "text-center";
                                                     break;
-                                                case 5: // DATE_FIELD
+                                                case 5: // DATE
                                                     $classname[] = "text-center";
                                                     break;
-                                                case 6: // DATETIME_FIELD
+                                                case 6: // DATETIME
+                                                    $classname[] = "text-center";
+                                                    break;
+                                                case 7: // COLOR
                                                     $classname[] = "text-center";
                                                     break;
                                                 default:
@@ -386,7 +391,7 @@ class webutility
                                                         },
                                                     <?php
                                                     break;  
-                                                case 2: // DROPDOWN_FIELD
+                                                case 2: // DROPDOWN
                                                     ?> render: function(data) {
                                                         aryJson = <?=$this->post_encode($column['JSON']) ;?>;
                                                         select = $('<select class="SELECT2_<?= $column['NAME']; ?>"></select>', {})
@@ -422,7 +427,7 @@ class webutility
                                                         }
                                                     <?php
                                                     break; 
-                                                case 5: // DATE_FIELD
+                                                case 5: // DATE
                                                     ?> render: function(data) {
                                                         if (data !== null) {
                                                             return "<input type='date' class='form-control' style='text-align: right' value='" + data + "'>";
@@ -432,10 +437,30 @@ class webutility
                                                         }
                                                     <?php
                                                     break; 
-                                                case 6: // DATETIME_FIELD
+                                                case 6: // DATETIME
                                                     ?> render: function(data) {
                                                         if (data !== null) {
                                                             return "<input type='datetime-local' class='form-control' style='text-align: right' value='" + data.replace(" ","T") + "' step='1'>";
+                                                        } else {
+                                                            return "";
+                                                        }
+                                                        }
+                                                    <?php
+                                                    break; 
+                                                case 7: // COLOR
+                                                    ?> render: function(data) {
+                                                        if (data !== null) {
+                                                            return "<input type='color' class='text-align:center' value='" + data + "'>";
+                                                        } else {
+                                                            return "";
+                                                        }
+                                                        }
+                                                    <?php
+                                                    break; 
+                                                case 9: // EMAIL
+                                                    ?> render: function(data) {
+                                                        if (data !== null) {
+                                                            return "<input type='email' style='border: none; background: transparent;' value='" + data + "'>";
                                                         } else {
                                                             return "";
                                                         }
@@ -562,7 +587,7 @@ class webutility
                     break;
                 case 'SELECT2': // // setting 4 select2 dropdown
                     switch ($Typ) {
-                        case 2: // DROPDOWN_FIELD
+                        case 2: // DROPDOWN
                             $aryColumns = $arySetting['SELECT2']['columns'];
                              $this->obj_ssp->set_length(-1); // remove length & paging
                              $this->obj_ssp->set_Select($aryColumns);

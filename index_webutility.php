@@ -53,6 +53,7 @@
 				$obj_webutility->new_column("root.LINK_BUTTON", "LINK_BUTTON", "column: LINK_BUTTON", VIEW, LINK_BUTTON);
 				$obj_webutility->new_column("root.DATE_FIELD", "DATE_FIELD", "column: DATE_FIELD", VIEW, DATE_FIELD);
 				$obj_webutility->new_column("root.DATETIME_FIELD", "DATETIME_FIELD", "column: DATETIME_FIELD", VIEW, DATETIME_FIELD);
+				$obj_webutility->new_column("root.COLOR_FIELD", "COLOR_FIELD", "column: COLOR_FIELD", VIEW, COLOR_FIELD);
 				$defOrderby_xxxTESTxxx = 0;
 				$obj_webutility->table_header();
 			?>
