@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Erstellungszeit: 18. Jun 2022 um 08:22
+-- Erstellungszeit: 19. Jun 2022 um 16:48
 -- Server-Version: 8.0.28
 -- PHP-Version: 8.0.15
 
@@ -24,20 +24,20 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `dropdown_table`
+-- Tabellenstruktur für Tabelle `dropdown_lookup_table`
 --
 
-CREATE TABLE `dropdown_table` (
+CREATE TABLE `dropdown_lookup_table` (
   `ID` mediumint NOT NULL,
   `DEL` bit(1) NOT NULL DEFAULT b'0',
   `TEXT` char(30) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
--- Daten für Tabelle `dropdown_table`
+-- Daten für Tabelle `dropdown_lookup_table`
 --
 
-INSERT INTO `dropdown_table` (`ID`, `DEL`, `TEXT`) VALUES
+INSERT INTO `dropdown_lookup_table` (`ID`, `DEL`, `TEXT`) VALUES
 (1, b'0', 'ONE'),
 (2, b'0', 'TWO'),
 (3, b'0', 'THREE'),
@@ -47,6 +47,84 @@ INSERT INTO `dropdown_table` (`ID`, `DEL`, `TEXT`) VALUES
 (7, b'0', 'SEVEN'),
 (8, b'0', 'EIGHT'),
 (9, b'0', 'NINE');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `dropdown_multi_lookup_table`
+--
+
+CREATE TABLE `dropdown_multi_lookup_table` (
+  `ID` mediumint NOT NULL,
+  `DEL` bit(1) NOT NULL DEFAULT b'0',
+  `TEXT` char(30) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+--
+-- Daten für Tabelle `dropdown_multi_lookup_table`
+--
+
+INSERT INTO `dropdown_multi_lookup_table` (`ID`, `DEL`, `TEXT`) VALUES
+(1, b'0', 'zéro'),
+(2, b'0', 'un'),
+(3, b'0', 'deux'),
+(4, b'0', 'trois'),
+(5, b'0', 'quatre'),
+(6, b'0', 'cinq'),
+(7, b'0', 'six'),
+(8, b'0', 'sept'),
+(9, b'0', 'huit'),
+(10, b'0', 'neuf'),
+(11, b'0', 'dix'),
+(12, b'0', 'onze'),
+(13, b'0', 'douze'),
+(14, b'0', 'treize'),
+(15, b'0', 'quatorze'),
+(16, b'0', 'quinze'),
+(17, b'0', 'seize'),
+(18, b'0', 'dix-sept'),
+(19, b'0', 'dix-huit'),
+(20, b'0', 'dix-neuf'),
+(21, b'0', 'vingt');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `ref_root_ref_dropdown_multi_table`
+--
+
+CREATE TABLE `ref_root_ref_dropdown_multi_table` (
+  `ID` mediumint NOT NULL,
+  `DEL` bit(1) NOT NULL DEFAULT b'0',
+  `REF_ROOT` mediumint NOT NULL,
+  `REF_DROPDOWN_MULTI` mediumint NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+--
+-- Daten für Tabelle `ref_root_ref_dropdown_multi_table`
+--
+
+INSERT INTO `ref_root_ref_dropdown_multi_table` (`ID`, `DEL`, `REF_ROOT`, `REF_DROPDOWN_MULTI`) VALUES
+(1, b'0', 1, 1),
+(2, b'0', 1, 2),
+(3, b'0', 1, 3),
+(4, b'0', 1, 4),
+(5, b'0', 1, 5),
+(6, b'0', 2, 6),
+(7, b'0', 2, 7),
+(8, b'0', 2, 8),
+(9, b'0', 3, 9),
+(10, b'0', 3, 10),
+(11, b'0', 4, 11),
+(12, b'0', 5, 12),
+(13, b'0', 5, 13),
+(14, b'0', 6, 14),
+(15, b'0', 6, 15),
+(16, b'0', 6, 16),
+(17, b'0', 7, 17),
+(18, b'0', 7, 18),
+(19, b'0', 7, 19),
+(20, b'0', 7, 20);
 
 -- --------------------------------------------------------
 
@@ -73,7 +151,7 @@ CREATE TABLE `root_table` (
 --
 
 INSERT INTO `root_table` (`ID`, `DEL`, `TEXT`, `CHECKBOX`, `REF_DROPDOWN`, `LINK`, `LINK_BUTTON`, `DATE`, `DATETIME`, `COLOR`, `EMAIL`) VALUES
-(1, b'0', 'ALPHA', b'0', 1, 'https://stackoverflow.com/questions/219569/best-database-field-type-for-a-url', 'https://stackoverflow.com/questions/219569/best-database-field-type-for-a-url', '2022-06-17', '2022-06-17 00:00:00', '#ff0000', 'info@dwuty.de'),
+(1, b'0', 'ALPHA', b'0', 1, 'https://stackoverflow.com/questions/219569/best-database-field-type-for-a-url', 'https://stackoverflow.com/questions/219569/best-database-field-type-for-a-url', '2022-06-17', '2022-06-17 00:00:00', '#ff0000', 'info@dwuty.de '),
 (2, b'0', 'BRAVO', b'0', 2, 'https://packagist.org/packages/datatableswebutility/dwuty', 'https://packagist.org/packages/datatableswebutility/dwuty', '2022-06-23', '2022-06-23 12:57:36', '#00ff1e', 'abuse@dwuty.de'),
 (3, b'0', 'CHARLIE', b'0', 3, 'http://datatableswebutility.com/', 'http://datatableswebutility.com/', '2022-06-29', '2022-06-30 01:55:12', '#4f6392', 'postmaster@dwuty.de'),
 (4, b'0', 'DELTA', b'0', 4, 'http://datatableswebutility.de', 'http://datatableswebutility.de', '2022-07-05', '2022-07-06 14:52:48', NULL, 'security@dwuty.de'),
@@ -105,9 +183,21 @@ INSERT INTO `root_table` (`ID`, `DEL`, `TEXT`, `CHECKBOX`, `REF_DROPDOWN`, `LINK
 --
 
 --
--- Indizes für die Tabelle `dropdown_table`
+-- Indizes für die Tabelle `dropdown_lookup_table`
 --
-ALTER TABLE `dropdown_table`
+ALTER TABLE `dropdown_lookup_table`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indizes für die Tabelle `dropdown_multi_lookup_table`
+--
+ALTER TABLE `dropdown_multi_lookup_table`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indizes für die Tabelle `ref_root_ref_dropdown_multi_table`
+--
+ALTER TABLE `ref_root_ref_dropdown_multi_table`
   ADD PRIMARY KEY (`ID`);
 
 --
@@ -121,10 +211,22 @@ ALTER TABLE `root_table`
 --
 
 --
--- AUTO_INCREMENT für Tabelle `dropdown_table`
+-- AUTO_INCREMENT für Tabelle `dropdown_lookup_table`
 --
-ALTER TABLE `dropdown_table`
+ALTER TABLE `dropdown_lookup_table`
   MODIFY `ID` mediumint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT für Tabelle `dropdown_multi_lookup_table`
+--
+ALTER TABLE `dropdown_multi_lookup_table`
+  MODIFY `ID` mediumint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT für Tabelle `ref_root_ref_dropdown_multi_table`
+--
+ALTER TABLE `ref_root_ref_dropdown_multi_table`
+  MODIFY `ID` mediumint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT für Tabelle `root_table`
