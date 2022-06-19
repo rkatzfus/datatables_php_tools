@@ -36,7 +36,7 @@
 					"ORDERABLE" => false
 					, "SEARCHABLE" => false
 				);
-				$arySetting_DROPDOWN_FIELD = array(
+				$arySetting_DROPDOWN = array(
 					"AJAX" => "/vendor/datatableswebutility/dwuty/read_select2.php"
 					, "SELECT2" => array(
 						"columns" => array(
@@ -46,14 +46,15 @@
 						, "from" => "MYSQL_DATABASE.dropdown_table dropdown"
 					)
 				);
-				$obj_webutility->new_column("root.TEXT_FIELD", "TEXT_FIELD", "column: TEXT_FIELD", VIEW, TEXT_FIELD);
+				$obj_webutility->new_column("root.TEXT", "TEXT", "column: TEXT", VIEW, TEXT);
 				$obj_webutility->new_column("root.CHECKBOX", "CHECKBOX", "column: CHECKBOX", VIEW, CHECKBOX, $arySetting_CHECKBOX);
-				$obj_webutility->new_column("root.REF_DROPDOWN", "DROPDOWN_FIELD", "column: DROPDOWN_FIELD", VIEW, DROPDOWN_FIELD, $arySetting_DROPDOWN_FIELD);
+				$obj_webutility->new_column("root.REF_DROPDOWN", "DROPDOWN", "column: DROPDOWN", VIEW, DROPDOWN, $arySetting_DROPDOWN);
 				$obj_webutility->new_column("root.LINK", "LINK", "column: LINK", VIEW, LINK);
 				$obj_webutility->new_column("root.LINK_BUTTON", "LINK_BUTTON", "column: LINK_BUTTON", VIEW, LINK_BUTTON);
-				$obj_webutility->new_column("root.DATE_FIELD", "DATE_FIELD", "column: DATE_FIELD", VIEW, DATE_FIELD);
-				$obj_webutility->new_column("root.DATETIME_FIELD", "DATETIME_FIELD", "column: DATETIME_FIELD", VIEW, DATETIME_FIELD);
-				$obj_webutility->new_column("root.COLOR_FIELD", "COLOR_FIELD", "column: COLOR_FIELD", VIEW, COLOR_FIELD);
+				$obj_webutility->new_column("root.DATE", "DATE", "column: DATE", VIEW, DATE);
+				$obj_webutility->new_column("root.DATETIME", "DATETIME", "column: DATETIME", VIEW, DATETIME);
+				$obj_webutility->new_column("root.COLOR", "COLOR", "column: COLOR", VIEW, COLOR);
+				$obj_webutility->new_column("root.EMAIL", "EMAIL", "column: EMAIL", VIEW, EMAIL);
 				$defOrderby_xxxTESTxxx = 0;
 				$obj_webutility->table_header();
 			?>

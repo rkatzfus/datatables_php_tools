@@ -450,7 +450,7 @@ class webutility
                                                 case 7: // COLOR
                                                     ?> render: function(data) {
                                                         if (data !== null) {
-                                                            return "<input type='color' class='text-align:center' value='" + data + "'>";
+                                                            return "<input type='color' class='form-control' value='" + data + "'>";
                                                         } else {
                                                             return "";
                                                         }
@@ -460,7 +460,7 @@ class webutility
                                                 case 9: // EMAIL
                                                     ?> render: function(data) {
                                                         if (data !== null) {
-                                                            return "<input type='email' style='border: none; background: transparent;' value='" + data + "'>";
+                                                            return "<input type='email' class='form-control' style='border: none; background: transparent;' value='" + data + "'>";
                                                         } else {
                                                             return "";
                                                         }

@@ -73,7 +73,7 @@ CREATE TABLE `root_table` (
 --
 
 INSERT INTO `root_table` (`ID`, `DEL`, `TEXT`, `CHECKBOX`, `REF_DROPDOWN`, `LINK`, `LINK_BUTTON`, `DATE`, `DATETIME`, `COLOR`, `EMAIL`) VALUES
-(1, b'0', 'ALPHA', b'0', 1, 'https://stackoverflow.com/questions/219569/best-database-field-type-for-a-url', 'https://stackoverflow.com/questions/219569/best-database-field-type-for-a-url', '2022-06-17', '2022-06-17 00:00:00', '#ff0000', 'info@dwuty.de '),
+(1, b'0', 'ALPHA', b'0', 1, 'https://stackoverflow.com/questions/219569/best-database-field-type-for-a-url', 'https://stackoverflow.com/questions/219569/best-database-field-type-for-a-url', '2022-06-17', '2022-06-17 00:00:00', '#ff0000', 'info@dwuty.de'),
 (2, b'0', 'BRAVO', b'0', 2, 'https://packagist.org/packages/datatableswebutility/dwuty', 'https://packagist.org/packages/datatableswebutility/dwuty', '2022-06-23', '2022-06-23 12:57:36', '#00ff1e', 'abuse@dwuty.de'),
 (3, b'0', 'CHARLIE', b'0', 3, 'http://datatableswebutility.com/', 'http://datatableswebutility.com/', '2022-06-29', '2022-06-30 01:55:12', '#4f6392', 'postmaster@dwuty.de'),
 (4, b'0', 'DELTA', b'0', 4, 'http://datatableswebutility.de', 'http://datatableswebutility.de', '2022-07-05', '2022-07-06 14:52:48', NULL, 'security@dwuty.de'),
