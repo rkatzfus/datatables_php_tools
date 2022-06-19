@@ -21,7 +21,7 @@
 		<script type="text/javascript" src="/vendor/select2/select2/dist/js/i18n/de.js"></script>
 	</head>
 	<body>
-		<div class="container-fluid">
+		<div class="container-fluid mt-1">
 			<?php
 				$pkfield_xxxTESTxxx = "root.ID";
 				$array_AJAX_xxxTESTxxx = array();
@@ -47,14 +47,17 @@
 					)
 				);
 				$obj_webutility->new_column("root.TEXT", "TEXT", "column: TEXT", VIEW, TEXT);
+				$obj_webutility->new_column("root.EMAIL", "EMAIL", "column: EMAIL", VIEW, EMAIL);
 				$obj_webutility->new_column("root.CHECKBOX", "CHECKBOX", "column: CHECKBOX", VIEW, CHECKBOX, $arySetting_CHECKBOX);
-				$obj_webutility->new_column("root.REF_DROPDOWN", "DROPDOWN", "column: DROPDOWN", VIEW, DROPDOWN, $arySetting_DROPDOWN);
 				$obj_webutility->new_column("root.LINK", "LINK", "column: LINK", VIEW, LINK);
 				$obj_webutility->new_column("root.LINK_BUTTON", "LINK_BUTTON", "column: LINK_BUTTON", VIEW, LINK_BUTTON);
+				$obj_webutility->new_column("root.COLOR", "COLOR", "column: COLOR", VIEW, COLOR);
+				$obj_webutility->new_column("root.REF_DROPDOWN", "DROPDOWN", "column: DROPDOWN", VIEW, DROPDOWN, $arySetting_DROPDOWN);
 				$obj_webutility->new_column("root.DATE", "DATE", "column: DATE", VIEW, DATE);
 				$obj_webutility->new_column("root.DATETIME", "DATETIME", "column: DATETIME", VIEW, DATETIME);
-				$obj_webutility->new_column("root.COLOR", "COLOR", "column: COLOR", VIEW, COLOR);
-				$obj_webutility->new_column("root.EMAIL", "EMAIL", "column: EMAIL", VIEW, EMAIL);
+				
+				
+				
 				$defOrderby_xxxTESTxxx = 0;
 				$obj_webutility->table_header();
 			?>
@@ -63,7 +66,10 @@
 			$obj_webutility->config(
 				$defOrderby_xxxTESTxxx,
 				"asc"
-				, "fixedHeader: true"
+				, "
+				fixedHeader: true,
+				scrollX: true
+				"
 			);
 		?>
 	</body>

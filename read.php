@@ -47,13 +47,13 @@ if (!empty($_POST['search']['value'])) {
     foreach ($ary2search_complete as $complete_value) { 
         foreach ($ary_Columnsdata as $Columnsdata_value) {
             if ($complete_value == $Columnsdata_value['NAME']) { 
-                if (!in_array($Columnsdata_value['TYP'], array('2', '8'), true)) { 
+                if (!in_array($Columnsdata_value['TYP'], array('6', '7'), true)) { 
                     $ary_sqlSearch[] = $Columnsdata_value['SQLNAME'] . ' like \'%' . $searchString . '%\'';
                 } else {                      
                     foreach ($ary_select2 as $select2_value) {
                         if ($select2_value['SQLNAME'] == $Columnsdata_value['SQLNAME']) {
                             switch ($Columnsdata_value['TYP']) {
-                                case 2: 
+                                case 6: 
                                     $sql = '
                                         select
                                             ' . $Columnsdata_value['SELECT2']['columns']['id'] . '
@@ -65,7 +65,7 @@ if (!empty($_POST['search']['value'])) {
                                     ';
                                     $ary_sqlSearch[] = $Columnsdata_value['SQLNAME'] . ' in (' . $sql . ')';
                                     break;
-                                case 8: 
+                                case 7: 
                                     $subsql = '
                                         select
                                             ' . $Columnsdata_value['SUBSELECT2']['columns']['id'] . '

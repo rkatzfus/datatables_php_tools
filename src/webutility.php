@@ -5,14 +5,27 @@ define("VIEW", "1");
 define("EDIT", "2");
 //------------------
 define('TEXT', '0');
-define('CHECKBOX', '1');
-define('DROPDOWN', '2');
+define('EMAIL', '1');
+define('CHECKBOX', '2');
 define('LINK', '3');
 define('LINK_BUTTON', '4');
-define('DATE', '5');
-define('DATETIME', '6');
-define('COLOR', '7');
-define('EMAIL', '9');
+define('COLOR', '5');
+define('DROPDOWN', '6');
+define('DROPDOWN_MULTI', '7');
+define('DATE', '8');
+define('DATETIME', '9');
+
+
+// define('TEXT', '0');
+// define('CHECKBOX', '1');
+// define('DROPDOWN', '2');
+// define('DROPDOWN_MULTI', 'X');
+// define('LINK', '3');
+// define('LINK_BUTTON', '4');
+// define('DATE', '5');
+// define('DATETIME', '6');
+// define('COLOR', '7');
+// define('EMAIL', '9');
 
 
 
@@ -20,14 +33,14 @@ define('EMAIL', '9');
 
 
 
-// DEFINE('DT_EDIT_DATE_TIME_v2', '7');
 // DEFINE('DT_EDIT_DROPDOWN_MULTI_v2', '8');
 // DEFINE('DT_EDIT_PERCENT_v2', '9');
 // DEFINE('DT_EDIT_CURRENCY_v2', '10');
 // DEFINE('DT_EDIT_MODAL_BUTTON_v2', '11');
 // DEFINE('DT_EDIT_NUMBER_v2', '12');
-// DEFINE('DT_EDIT_COLOR_v2', '13'); // sql server nvarchar(8) -- untested
 // DEFINE('DT_EDIT_FILE_v2', '14');
+// DEFINE('tel', '14');
+
 
 
 
@@ -119,13 +132,13 @@ class webutility
     ) {
         $ary_SearchSelect2 = array();
         foreach ($this->columns as $column) {
-            if ($column['TYP'] == 2 or $column['TYP'] == 8) {
+            if ($column['TYP'] == 6 or $column['TYP'] == 7) {
                 $ary_SearchSelect2[$column['SQLNAME']] = $column['JSON'];
             }
         }
         foreach ($this->columns as $columns_key => $columns_value) {
             if ($columns_value["TYP"] != 11) { // MODAL_BUTTON
-                if ($columns_value["TYP"] == 8) { // DROPDOWN_MULTI_FIELD
+                if ($columns_value["TYP"] == 7) { // DROPDOWN_MULTI_FIELD
                     $columns_value["SQLNAME"] = $columns_value["SQLNAMETABLE"];
                     unset($columns_value["SQLNAMETABLE"]);
                     $columnsdata[$columns_key] = $columns_value;
@@ -324,22 +337,22 @@ class webutility
                                         foreach ($this->columns as $columns_key => $columns_value) {
                                             ($columns_value['ACTION'] == 2 && isset($this->ajax_update_url))?$classname[] = "contenteditable":"";
                                             switch ($columns_value["TYP"]) {
-                                                case 1: // CHECKBOX
+                                                case 2: // CHECKBOX
                                                     $classname[] = "text-center";
                                                     break;
-                                                case 2: // DROPDOWN
+                                                case 6: // DROPDOWN
                                                     $classname[] = "text-center";
                                                     break;
                                                 case 4: // LINK_BUTTON
                                                     $classname[] = "text-center";
                                                     break;
-                                                case 5: // DATE
+                                                case 8: // DATE
                                                     $classname[] = "text-center";
                                                     break;
-                                                case 6: // DATETIME
+                                                case 9: // DATETIME
                                                     $classname[] = "text-center";
                                                     break;
-                                                case 7: // COLOR
+                                                case 5: // COLOR
                                                     $classname[] = "text-center";
                                                     break;
                                                 default:
@@ -384,14 +397,24 @@ class webutility
                                             echo "data: \"" . $column["NAME"] . "\", ";
                                             echo "celltype: \"" . $column["TYP"] . "\", ";
                                             switch ($column['TYP']) {
-                                                case 1: // CHECKBOX
+                                                case 0: // TEXT
+                                                    ?> render: function(data) {
+                                                        if (data !== null) {
+                                                            return "<input type='text' class='form-control' style='border: none; background: transparent; box-shadow: none;' value='" + data + "' title='" + data + "'>";
+                                                        } else {
+                                                            return "";
+                                                        }
+                                                    }
+                                                    <?php
+                                                    break; 
+                                                case 2: // CHECKBOX
                                                     ?> render: function(data) {
                                                             is_checked = (data == true) ? 'checked' : '';
-                                                            return '<div class="form-switch"><input class="form-check-input" type="checkbox" ' + is_checked + '></div>';
+                                                            return "<div class='form-switch'><input class='form-check-input' type='checkbox' style='box-shadow: none;' "+ is_checked + "></div>";
                                                         },
                                                     <?php
                                                     break;  
-                                                case 2: // DROPDOWN
+                                                case 6: // DROPDOWN
                                                     ?> render: function(data) {
                                                         aryJson = <?=$this->post_encode($column['JSON']) ;?>;
                                                         select = $('<select class="SELECT2_<?= $column['NAME']; ?>"></select>', {})
@@ -410,7 +433,7 @@ class webutility
                                                 case 3: // LINK
                                                     ?> render: function(data) {
                                                         if (data !== null) {
-                                                            return "<a href='" + data + "' title='" + data + "' target='_blank' rel='noopener'>" + data + "</a>";
+                                                            return "<a href='" + data + "' title='" + data + "' target='_blank' rel='noopener'><input type='url' class='form-control' style='border: none; background: transparent; box-shadow: none;' value='" + data + "'></a>";
                                                         } else {
                                                             return "";
                                                         }
@@ -420,51 +443,51 @@ class webutility
                                                 case 4: // LINK_BUTTON
                                                     ?> render: function(data) {
                                                         if (data !== null) {
-                                                            return "<a class='btn btn-outline-primary form-control' href='" + data + "' title='" + data + "' target='_blank' rel='noopener' role='button'>Link</a>";
+                                                            return "<a class='btn btn-outline-primary form-control' href='" + data + "' title='" + data + "' target='_blank' rel='noopener' role='button' style='box-shadow: none;'>Link</a>";
                                                         } else {
                                                             return "";
                                                         }
                                                         }
                                                     <?php
                                                     break; 
-                                                case 5: // DATE
+                                                case 8: // DATE
                                                     ?> render: function(data) {
                                                         if (data !== null) {
-                                                            return "<input type='date' class='form-control' style='text-align: right' value='" + data + "'>";
+                                                            return "<input type='date' class='form-control' style='text-align: right; box-shadow: none;' value='" + data + "'>";
                                                         } else {
                                                             return "";
                                                         }
                                                         }
                                                     <?php
                                                     break; 
-                                                case 6: // DATETIME
+                                                case 9: // DATETIME
                                                     ?> render: function(data) {
                                                         if (data !== null) {
-                                                            return "<input type='datetime-local' class='form-control' style='text-align: right' value='" + data.replace(" ","T") + "' step='1'>";
+                                                            return "<input type='datetime-local' class='form-control' style='text-align: right; box-shadow: none;' value='" + data.replace(" ","T") + "' step='1'>";
                                                         } else {
                                                             return "";
                                                         }
                                                         }
                                                     <?php
                                                     break; 
-                                                case 7: // COLOR
+                                                case 5: // COLOR
                                                     ?> render: function(data) {
                                                         if (data !== null) {
-                                                            return "<input type='color' class='form-control' value='" + data + "'>";
+                                                            return "<input type='color' style='box-shadow: none;' value='" + data + "'>";
                                                         } else {
                                                             return "";
                                                         }
                                                         }
                                                     <?php
                                                     break; 
-                                                case 9: // EMAIL
+                                                case 1: // EMAIL
                                                     ?> render: function(data) {
                                                         if (data !== null) {
-                                                            return "<input type='email' class='form-control' style='border: none; background: transparent;' value='" + data + "'>";
+                                                            return "<input type='email' class='form-control' style='border: none; background: transparent; box-shadow: none;' value='" + data + "' title='" + data + "'>";
                                                         } else {
                                                             return "";
                                                         }
-                                                        }
+                                                    }
                                                     <?php
                                                     break; 
                                                 default:
@@ -489,12 +512,12 @@ class webutility
                                     function() {
                                         <?php
                                             foreach ($this->columns as $column) {
-                                                if ($column["TYP"] == 2 || $column["TYP"] == 8) {
+                                                if ($column["TYP"] == 6 || $column["TYP"] == 7) {
                                                 switch ($column["TYP"]) {
-                                                    case 2: // DT_EDIT_DROPDOWN_v2
+                                                    case 6: // DT_EDIT_DROPDOWN_v2
                                                         $select2data = json_encode($column["SELECT2"], JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE);
                                                         break;
-                                                    case 8: // DT_EDIT_DROPDOWN_MULTI_v2
+                                                    case 7: // DT_EDIT_DROPDOWN_MULTI_v2
                                                         $select2data = json_encode($column["SUBSELECT2"], JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE);
                                                         break;
                                                     default:
@@ -563,7 +586,8 @@ class webutility
         $required=isset($arySetting["REQUIRED"])?$arySetting["REQUIRED"]:"";
         $default=isset($arySetting["DEFAULT"])?$arySetting["DEFAULT"]:"";
         $encryption=isset($arySetting["ENCRYPTION"])?$arySetting["ENCRYPTION"]:false;
-        
+        $input_restrictions=isset($arySetting["INPUT_RESTRICTIONS"])?$arySetting["INPUT_RESTRICTIONS"]:false;
+
         $this->columns[] = array( //default4all
             "SQLNAME" => $SqlName
             , "NAME" => $Name
@@ -576,6 +600,7 @@ class webutility
             , "REQUIRED" => $required
             , "DEFAULT" => $default
             , "ENCRYPTION" => $encryption
+            , "INPUT_RESTRICTIONS" => $input_restrictions
         );
         foreach ($this->columns as $column_key => $column_value) {
             if ($this->columns[$column_key]["NAME"] == $Name && !empty($arySetting)) {
@@ -587,7 +612,7 @@ class webutility
                     break;
                 case 'SELECT2': // // setting 4 select2 dropdown
                     switch ($Typ) {
-                        case 2: // DROPDOWN
+                        case 6: // DROPDOWN
                             $aryColumns = $arySetting['SELECT2']['columns'];
                              $this->obj_ssp->set_length(-1); // remove length & paging
                              $this->obj_ssp->set_Select($aryColumns);
@@ -597,7 +622,7 @@ class webutility
                             $ary_Select2Initial = $this->obj_mysqli->sql2array_pk_value($sql, 'id', 'text');
                             $this->columns[$column_key]['JSON'] =  $ary_Select2Initial;
                             break;
-                        case 8: // DT_EDIT_DROPDOWN_MULTI_v2
+                        case 7: // DT_EDIT_DROPDOWN_MULTI_v2
                             $this->columns[$column_key]['SQLNAME'] = "substring((select \',\' + cast(" . $arySetting['SELECT2']['columns']['text'] . " as varchar) from " . $arySetting['SELECT2']['from'] . " where " . $this->pkfield . " = " . $arySetting['SELECT2']['columns']['id'] . " and " . $arySetting['SELECT2']['where'] . " for xml path(\'\')), 2, 1000000)";
                             $this->columns[$column_key]['SQLNAMETABLE'] = $SqlName;
                             $aryColumns = $arySetting['SUBSELECT2']['columns'];
