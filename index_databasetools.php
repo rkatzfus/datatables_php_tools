@@ -13,7 +13,7 @@
                 select
                     ID
                     , DEL
-                    , TEXT_FIELD
+                    , TEXT
                     , CHECKBOX
                 from
                     MYSQL_DATABASE.root_table;
@@ -22,7 +22,7 @@
             var_dump($obj_mysqli->sql2array($sql));
             echo "<hr>";
             echo "<b>sql2array_pk</b>";
-            var_dump($obj_mysqli->sql2array_pk($sql,"TEXT_FIELD"));
+            var_dump($obj_mysqli->sql2array_pk($sql,"TEXT"));
             echo "<hr>";
             $sql = "
                 select
@@ -38,7 +38,7 @@
                     ID
                     , TEXT
                 from 
-                    MYSQL_DATABASE.dropdown_table; 
+                    MYSQL_DATABASE.dropdown_lookup_table; 
             ";
             echo "<b>sql2array_pk_value</b>";
             var_dump($obj_mysqli->sql2array_pk_value($sql,"ID","TEXT"));

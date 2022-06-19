@@ -43,7 +43,7 @@
 						  "id" => "dropdown.ID"
 						  , "text" => "dropdown.TEXT"
 						)
-						, "from" => "MYSQL_DATABASE.dropdown_table dropdown"
+						, "from" => "MYSQL_DATABASE.dropdown_lookup_table dropdown"
 					)
 				);
 				$obj_webutility->new_column("root.TEXT", "TEXT", "column: TEXT", VIEW, TEXT);
@@ -55,9 +55,6 @@
 				$obj_webutility->new_column("root.REF_DROPDOWN", "DROPDOWN", "column: DROPDOWN", VIEW, DROPDOWN, $arySetting_DROPDOWN);
 				$obj_webutility->new_column("root.DATE", "DATE", "column: DATE", VIEW, DATE);
 				$obj_webutility->new_column("root.DATETIME", "DATETIME", "column: DATETIME", VIEW, DATETIME);
-				
-				
-				
 				$defOrderby_xxxTESTxxx = 0;
 				$obj_webutility->table_header();
 			?>
