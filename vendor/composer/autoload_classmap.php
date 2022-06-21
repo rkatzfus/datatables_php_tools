@@ -6,5 +6,10 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\crud\\crud' => $baseDir . '/src/crud/crud.php',
+    'App\\database_tools' => $baseDir . '/src/database_tools.php',
+    'App\\src' => $baseDir . '/src/src.php',
+    'App\\webutility' => $baseDir . '/src/webutility.php',
+    'App\\webutility_ssp' => $baseDir . '/src/webutility_ssp.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
 );

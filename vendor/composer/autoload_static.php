@@ -21,6 +21,11 @@ class ComposerStaticInit3a17cdf7e3c3e7edc81326acc03e1f52
     );
 
     public static $classMap = array (
+        'App\\crud\\crud' => __DIR__ . '/../..' . '/src/crud/crud.php',
+        'App\\database_tools' => __DIR__ . '/../..' . '/src/database_tools.php',
+        'App\\src' => __DIR__ . '/../..' . '/src/src.php',
+        'App\\webutility' => __DIR__ . '/../..' . '/src/webutility.php',
+        'App\\webutility_ssp' => __DIR__ . '/../..' . '/src/webutility_ssp.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
 

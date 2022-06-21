@@ -476,14 +476,17 @@ class webutility
                                         case 7: // DROPDOWN_MULTI
                                         ?> render: function(data) {
                                                 aryJson = <?= $this->post_encode($column['JSON']); ?>;
-                                                select = $('<select class="SELECT2_<?= $column['NAME']; ?>" multiple></select>', {})
-                                                if (data != 0 && data != null) {
-                                                    option = $("<option>" + aryJson[data] + "</option>");
-                                                    option.attr("selected", "selected")
-                                                    select.append(option);
-                                                    option.attr("value", data);
-                                                    select.append(option);
-                                                    select.attr("data-search", data);
+                                                select = $('<select class="SELECT2_<?= $column['NAME']; ?>" multiple></select>')
+                                                if (data) {
+                                                    id = data.split(',');
+                                                    data.split(',').forEach(id => {
+                                                        option = $("<option>" + aryJson[id] + "</option>");
+                                                        option.attr("selected", "selected")
+                                                        select.append(option);
+                                                        option.attr("value", id);
+                                                        select.append(option);
+                                                        select.attr("data-search", id);
+                                                    });
                                                 }
                                                 return select.prop("outerHTML");
                                             },
@@ -596,7 +599,7 @@ class webutility
         $Typ = 0,
         $arySetting = array()
     ) {
-        if ($Typ == 2 || $Typ == 8) {
+        if ($Typ == 6 || $Typ == 7) {
             $Action = 0;
         }
         $orderable = isset($arySetting["ORDERABLE"]) ? $arySetting["ORDERABLE"] : true;
@@ -632,8 +635,6 @@ class webutility
                                     break;
                                 case 7: // DT_EDIT_DROPDOWN_MULTI_v2
                                     $this->columns[$column_key]["SQLNAME"] = "group_concat(distinct " . $arySetting["SELECT2"]["columns"]["text"] . " separator ',')";
-                                    // $this->columns[$column_key]["SQLNAME"] = "group_concat(distinct " . $arySetting["SELECT2"]["columns"]["text"] . " separator ',') as " . $this->columns[$column_key]["NAME"];
-                                    // $this->columns[$column_key]["SQLNAME"] = "substring((select \',\' + cast(" . $arySetting["SELECT2"]["columns"]["text"] . " as varchar) from " . $arySetting["SELECT2"]["from"] . " where " . $this->pkfield . " = " . $arySetting["SELECT2"]["columns"]["id"] . " and " . $arySetting["SELECT2"]["where"] . " for xml path(\'\')), 2, 1000000)";
                                     $this->columns[$column_key]["SQLNAMETABLE"] = $SqlName;
                                     $aryColumns = $arySetting["SUBSELECT2"]["columns"];
                                     $this->obj_ssp->set_length(-1); // remove length & paging
