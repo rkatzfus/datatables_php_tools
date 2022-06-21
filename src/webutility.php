@@ -450,7 +450,7 @@ class webutility
                                         case 5: // COLOR
                                         ?> render: function(data) {
                                                 if (data !== null) {
-                                                    return "<input type='color' style='box-shadow: none;' value='" + data + "'>";
+                                                    return "<input type='color' style='box-shadow: none;' value='" + data + "' title='" + data + "'>";
                                                 } else {
                                                     return "";
                                                 }
